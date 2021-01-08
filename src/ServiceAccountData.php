@@ -24,26 +24,36 @@ class ServiceAccountData implements JsonSerializable
     const STATUS_UNKNOWN = 'Unknown';
 
     /**
+     * EVE character ID.
+     *
      * @var int
      */
     private $characterId;
 
     /**
+     * Service account username.
+     *
      * @var string|null
      */
     private $username;
 
     /**
+     * Service account password.
+     *
      * @var string|null
      */
     private $password;
 
     /**
+     * Service account e-mail.
+     *
      * @var string|null
      */
     private $email;
 
     /**
+     * Service account status.
+     *
      * @var string|null
      */
     private $status;

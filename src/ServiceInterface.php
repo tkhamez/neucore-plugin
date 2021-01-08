@@ -9,9 +9,6 @@ use Psr\Log\LoggerInterface;
 
 /**
  * Methods to implement for a Neucore service.
- *
- * A player can only register a new account for their main character and only if that account does not
- * already exists or if it's ServiceAccountData::$status is "Deactivated" or "Unknown".
  */
 interface ServiceInterface
 {
@@ -52,10 +49,13 @@ interface ServiceInterface
      *
      * This is not called if there is already an account for the character.
      *
+     * A player can only register a new account for their main character and only if that account does not
+     * already exist or if it's ServiceAccountData::$status is "Deactivated" or "Unknown".
+     *
      * @param CoreCharacter $character
      * @param CoreGroup[] $groups All groups from the player of the characters.
      * @param string $emailAddress
-     * @param int[] $allCharacterIds All character IDs from the same player account.
+     * @param int[] $allCharacterIds All EVE character IDs from the same player account.
      * @return ServiceAccountData
      * @throws Exception On error, the message should be one of the self::ERROR_* constants
      *                   (it will be shown to the user with a 409 response code) or empty (500 response code).

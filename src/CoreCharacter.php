@@ -7,51 +7,71 @@ namespace Neucore\Plugin;
 class CoreCharacter
 {
     /**
+     * EVE character ID.
+     *
      * @var int
      */
     public $id;
 
     /**
+     * Neucore main character.
+     *
      * @var bool|null
      */
     public $main;
 
     /**
+     * EVE character name.
+     *
      * @var string|null
      */
     public $name;
 
     /**
+     * Character owner hash.
+     *
      * @var string|null
      */
     public $ownerHash;
 
     /**
+     * EVE corporation ID.
+     *
      * @var int|null
      */
     public $corporationId;
 
     /**
+     * EVE corporation name.
+     *
      * @var string|null
      */
     public $corporationName;
 
     /**
+     * EVE corporation ticker.
+     *
      * @var string|null
      */
     public $corporationTicker;
 
     /**
+     * EVE alliance ID.
+     *
      * @var int|null
      */
     public $allianceId;
 
     /**
+     * EVE alliance name.
+     *
      * @var string|null
      */
     public $allianceName;
 
     /**
+     * EVE alliance ticker.
+     *
      * @var string|null
      */
     public $allianceTicker;

@@ -7,11 +7,15 @@ namespace Neucore\Plugin;
 class CoreGroup
 {
     /**
+     * Neucore group ID.
+     *
      * @var int
      */
     public $identifier;
 
     /**
+     * Neucore group name.
+     *
      * @var string
      */
     public $name;
