@@ -73,7 +73,7 @@ interface ServiceInterface
      * This is not called if there is no account for the character.
      *
      * @param CoreCharacter $character
-     * @param array $groups
+     * @param CoreGroup[] $groups
      * @throws Exception On error
      */
     public function updateAccount(CoreCharacter $character, array $groups): void;
