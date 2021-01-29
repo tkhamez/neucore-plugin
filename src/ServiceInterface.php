@@ -88,4 +88,14 @@ interface ServiceInterface
      * @throws Exception
      */
     public function resetPassword(int $characterId): string;
+
+    /**
+     * Returns a list of all accounts.
+     *
+     * Used to update accounts with self::updateAccount().
+     *
+     * @return int[] EVE character IDs
+     * @throws Exception
+     */
+    public function getAllAccounts(): array;
 }
