@@ -37,4 +37,9 @@ class TestService implements ServiceInterface
     {
         return '123';
     }
+
+    public function getAllAccounts(): array
+    {
+        return [1];
+    }
 }

@@ -56,4 +56,13 @@ class ServiceInterfaceTest extends TestCase
         $service = new TestService(new TestLogger());
         $this->assertSame('123', $service->resetPassword(1));
     }
+
+    /**
+     * @throws Exception
+     */
+    public function testGetAllAccounts()
+    {
+        $service = new TestService(new TestLogger());
+        $this->assertSame([1], $service->getAllAccounts());
+    }
 }
