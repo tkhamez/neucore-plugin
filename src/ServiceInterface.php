@@ -72,6 +72,9 @@ interface ServiceInterface
      *
      * This is not called if there is no account for the character.
      *
+     * If the character does not exist on Neucore, this will still be called when updating all accounts,
+     * in which case the CoreCharacter will only contain the ID, all other properties will be null.
+     *
      * @param CoreCharacter $character
      * @param CoreGroup[] $groups
      * @throws Exception On error
