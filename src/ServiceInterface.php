@@ -32,7 +32,7 @@ interface ServiceInterface
      */
     public const ERROR_ACCOUNT_NOT_FOUND = 'account_not_found';
 
-    public function __construct(LoggerInterface $logger);
+    public function __construct(LoggerInterface $logger, string $configurationData);
 
     /**
      * Returns all accounts for the characters provided.

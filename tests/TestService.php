@@ -11,7 +11,7 @@ use Psr\Log\LoggerInterface;
 
 class TestService implements ServiceInterface
 {
-    public function __construct(LoggerInterface $logger)
+    public function __construct(LoggerInterface $logger, string $configurationData)
     {
     }
 

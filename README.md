@@ -14,6 +14,9 @@ vendor/bin/phpunit --bootstrap vendor/autoload.php tests
 
 ## Changelog
 
+0.3.0 - 2021-09-03
+- Add $configurationData argument to the ServiceInterface constructor.
+
 0.2.0 - 2021-01-29
 - Add ServiceInterface::getAllAccounts
 

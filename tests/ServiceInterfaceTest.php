@@ -15,7 +15,7 @@ class ServiceInterfaceTest extends TestCase
 {
     public function testConstruct()
     {
-        $this->assertInstanceOf(ServiceInterface::class, new TestService(new TestLogger()));
+        $this->assertInstanceOf(ServiceInterface::class, new TestService(new TestLogger(), ''));
     }
 
     /**
@@ -23,7 +23,7 @@ class ServiceInterfaceTest extends TestCase
      */
     public function testGetAccounts()
     {
-        $service = new TestService(new TestLogger());
+        $service = new TestService(new TestLogger(), '');
         $this->assertSame([], $service->getAccounts([], []));
     }
 
@@ -32,7 +32,7 @@ class ServiceInterfaceTest extends TestCase
      */
     public function testRegister()
     {
-        $service = new TestService(new TestLogger());
+        $service = new TestService(new TestLogger(), '');
         $this->assertInstanceOf(
             ServiceAccountData::class,
             $service->register(new CoreCharacter(1), [], '', []));
@@ -43,7 +43,7 @@ class ServiceInterfaceTest extends TestCase
      */
     public function testUpdateAccount()
     {
-        $service = new TestService(new TestLogger());
+        $service = new TestService(new TestLogger(), '');
         /** @noinspection PhpVoidFunctionResultUsedInspection */
         $this->assertNull($service->updateAccount(new CoreCharacter(1), []));
     }
@@ -53,7 +53,7 @@ class ServiceInterfaceTest extends TestCase
      */
     public function testResetPassword()
     {
-        $service = new TestService(new TestLogger());
+        $service = new TestService(new TestLogger(), '');
         $this->assertSame('123', $service->resetPassword(1));
     }
 
@@ -62,7 +62,7 @@ class ServiceInterfaceTest extends TestCase
      */
     public function testGetAllAccounts()
     {
-        $service = new TestService(new TestLogger());
+        $service = new TestService(new TestLogger(), '');
         $this->assertSame([1], $service->getAllAccounts());
     }
 }
