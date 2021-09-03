@@ -7,7 +7,7 @@ namespace Tests;
 use Neucore\Plugin\ServiceAccountData;
 use PHPUnit\Framework\TestCase;
 
-class AccountDataTest extends TestCase
+class ServiceAccountDataTest extends TestCase
 {
     public function testConstructJsonSerialize()
     {
