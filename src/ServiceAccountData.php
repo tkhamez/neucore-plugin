@@ -58,18 +58,27 @@ class ServiceAccountData implements JsonSerializable
      */
     private $status;
 
+    /**
+     * Service account display name.
+     *
+     * @var string|null
+     */
+    private $displayName;
+
     public function __construct(
         int $characterId,
         string $username = null,
         string $password = null,
         string $email = null,
-        string $status = null
+        string $status = null,
+        string $displayName = null
     ) {
         $this->characterId = $characterId;
         $this->username = $username;
         $this->password = $password;
         $this->email = $email;
         $this->status = $status;
+        $this->displayName = $displayName;
     }
 
     public function jsonSerialize(): array
@@ -80,6 +89,7 @@ class ServiceAccountData implements JsonSerializable
             'password' => $this->password,
             'email' => $this->email,
             'status' => $this->status,
+            'displayName' => $this->displayName,
         ];
     }
 
@@ -138,6 +148,17 @@ class ServiceAccountData implements JsonSerializable
         )) {
             $this->status = $status;
         }
+        return $this;
+    }
+
+    public function getDisplayName(): ?string
+    {
+        return $this->displayName;
+    }
+
+    public function setDisplayName(string $displayName): self
+    {
+        $this->displayName = $displayName;
         return $this;
     }
 }
