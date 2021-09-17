@@ -14,6 +14,15 @@ class CoreCharacter
     public $id;
 
     /**
+     * Neucore player (account) ID.
+     *
+     * Will be 0 if the character does not exist in the database.
+     *
+     * @var int
+     */
+    public $playerId;
+
+    /**
      * Neucore main character.
      *
      * @var bool|null
@@ -78,6 +87,7 @@ class CoreCharacter
 
     public function __construct(
         int $id,
+        int $playerId,
         bool $main = null,
         string $name = null,
         string $ownerHash = null,
@@ -89,6 +99,7 @@ class CoreCharacter
         string $allianceTicker = null
     ) {
         $this->id = $id;
+        $this->playerId = $playerId;
         $this->main = $main;
         $this->name = $name;
         $this->ownerHash = $ownerHash;

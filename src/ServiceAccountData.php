@@ -21,6 +21,8 @@ class ServiceAccountData implements JsonSerializable
 
     const STATUS_DEACTIVATED = 'Deactivated';
 
+    const STATUS_NONMEMBER = 'Nonmember';
+
     const STATUS_UNKNOWN = 'Unknown';
 
     /**
@@ -142,10 +144,13 @@ class ServiceAccountData implements JsonSerializable
      */
     public function setStatus(string $status): self
     {
-        if (in_array(
-            $status,
-            [self::STATUS_ACTIVE, self::STATUS_DEACTIVATED, self::STATUS_PENDING, self::STATUS_UNKNOWN]
-        )) {
+        if (in_array($status,[
+            self::STATUS_ACTIVE,
+            self::STATUS_DEACTIVATED,
+            self::STATUS_PENDING,
+            self::STATUS_NONMEMBER,
+            self::STATUS_UNKNOWN,
+        ])) {
             $this->status = $status;
         }
         return $this;
