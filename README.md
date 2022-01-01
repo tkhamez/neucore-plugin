@@ -26,6 +26,10 @@ vendor/bin/phpunit --bootstrap vendor/autoload.php tests
 
 ## Changelog
 
+0.6.0 - 2022-01-01
+
+- Renamed `ServiceAccountData::displayName` to `name`
+
 0.5.0 - 2021-09-17
 
 - Added $playerId property to CoreCharacter.

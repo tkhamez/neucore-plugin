@@ -17,7 +17,7 @@ class ServiceAccountDataTest extends TestCase
             'password' => null,
             'email' => null,
             'status' => null,
-            'displayName' => null,
+            'name' => null,
         ], (new ServiceAccountData(1))->jsonSerialize());
 
         $data = new ServiceAccountData(1, 'u', 'p', 'e', 's', 'dn');
@@ -27,7 +27,7 @@ class ServiceAccountDataTest extends TestCase
             'password' => 'p',
             'email' => 'e',
             'status' => 's',
-            'displayName' => 'dn',
+            'name' => 'dn',
         ], $data->jsonSerialize());
     }
 
@@ -64,9 +64,9 @@ class ServiceAccountDataTest extends TestCase
         );
     }
 
-    public function testSetGetDisplayName()
+    public function testSetGetName()
     {
         $data = new ServiceAccountData(1);
-        $this->assertSame('dn', $data->setDisplayName('dn')->getDisplayName());
+        $this->assertSame('dn', $data->setName('dn')->getName());
     }
 }

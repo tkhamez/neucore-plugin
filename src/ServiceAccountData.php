@@ -61,11 +61,11 @@ class ServiceAccountData implements JsonSerializable
     private $status;
 
     /**
-     * Service account display name.
+     * Service account name.
      *
      * @var string|null
      */
-    private $displayName;
+    private $name;
 
     public function __construct(
         int $characterId,
@@ -73,14 +73,14 @@ class ServiceAccountData implements JsonSerializable
         string $password = null,
         string $email = null,
         string $status = null,
-        string $displayName = null
+        string $name = null
     ) {
         $this->characterId = $characterId;
         $this->username = $username;
         $this->password = $password;
         $this->email = $email;
         $this->status = $status;
-        $this->displayName = $displayName;
+        $this->name = $name;
     }
 
     public function jsonSerialize(): array
@@ -91,7 +91,7 @@ class ServiceAccountData implements JsonSerializable
             'password' => $this->password,
             'email' => $this->email,
             'status' => $this->status,
-            'displayName' => $this->displayName,
+            'name' => $this->name,
         ];
     }
 
@@ -156,14 +156,14 @@ class ServiceAccountData implements JsonSerializable
         return $this;
     }
 
-    public function getDisplayName(): ?string
+    public function getName(): ?string
     {
-        return $this->displayName;
+        return $this->name;
     }
 
-    public function setDisplayName(string $displayName): self
+    public function setName(string $name): self
     {
-        $this->displayName = $displayName;
+        $this->name = $name;
         return $this;
     }
 }
