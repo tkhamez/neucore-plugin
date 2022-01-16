@@ -10,6 +10,9 @@ use Psr\Log\LoggerInterface;
 
 /**
  * Methods to implement for a Neucore service.
+ *
+ * The $groups parameter of all methods contains groups from the player of the character. This respects the
+ * "Groups Deactivation" configuration, including the delay.
  */
 interface ServiceInterface
 {
@@ -55,8 +58,7 @@ interface ServiceInterface
      * already exist or if it's ServiceAccountData::$status is "Deactivated" or "Unknown".
      *
      * @param CoreCharacter $character This is the main character from the player account.
-     * @param CoreGroup[] $groups All groups from the player of the character. This respects the "Groups Deactivation"
-     *        configuration, including the delay.
+     * @param CoreGroup[] $groups
      * @param string $emailAddress
      * @param int[] $allCharacterIds All EVE character IDs from the same player account.
      * @return ServiceAccountData
@@ -81,8 +83,7 @@ interface ServiceInterface
      * properties will be null.
      *
      * @param CoreCharacter $character
-     * @param CoreGroup[] $groups All groups from the player of the character. This respects the "Groups Deactivation"
-     *        configuration, including the delay.
+     * @param CoreGroup[] $groups
      * @param CoreCharacter|null $mainCharacter
      * @throws Exception On error. If the exceptions contains a message it will be shown to the user.
      */
@@ -98,6 +99,7 @@ interface ServiceInterface
      * CoreCharacter $id property will be 0, the $playerId will be the player ID and all other properties
      * will be null.
      *
+     * @param CoreGroup[] $groups
      * @throws Exception On error
      */
     public function updatePlayerAccount(CoreCharacter $mainCharacter, array $groups): void;
@@ -145,12 +147,14 @@ interface ServiceInterface
      *
      * @param CoreCharacter $coreCharacter The main character of the player
      * @param string $name The "{name}" part of the URL.
+     * @param CoreGroup[] $groups
      * @throws Exception
      */
     public function request(
         CoreCharacter $coreCharacter,
         string $name,
         ServerRequestInterface $request,
-        ResponseInterface $response
+        ResponseInterface $response,
+        array $groups
     ): ResponseInterface;
 }

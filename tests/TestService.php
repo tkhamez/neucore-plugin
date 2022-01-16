@@ -59,7 +59,8 @@ class TestService implements ServiceInterface
         CoreCharacter $coreCharacter,
         string $name,
         ServerRequestInterface $request,
-        ResponseInterface $response
+        ResponseInterface $response,
+        array $groups
     ): ResponseInterface {
         return $response;
     }

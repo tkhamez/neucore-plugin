@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tests;
 
 use Neucore\Plugin\CoreCharacter;
+use Neucore\Plugin\CoreGroup;
 use Neucore\Plugin\Exception;
 use Neucore\Plugin\ServiceAccountData;
 use Neucore\Plugin\ServiceConfiguration;
@@ -108,7 +109,8 @@ class ServiceInterfaceTest extends TestCase
             new CoreCharacter(10, 1),
             'name',
             new TestRequest(),
-            new TestResponse()
+            new TestResponse(),
+            [new CoreGroup(1, 'group')]
         ));
     }
 }

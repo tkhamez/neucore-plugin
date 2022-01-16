@@ -26,6 +26,10 @@ vendor/bin/phpunit --bootstrap vendor/autoload.php tests
 
 ## Changelog
 
+0.7.0 - 2022-01-16
+
+- Added `$groups` parameter to `ServiceInterface::request`
+
 0.6.0 - 2022-01-01
 
 - Renamed `ServiceAccountData::displayName` to `name`
