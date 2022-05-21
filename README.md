@@ -26,6 +26,10 @@ vendor/bin/phpunit --bootstrap vendor/autoload.php tests
 
 ## Changelog
 
+0.7.1 - 2022-05-21
+
+- If `ServiceAccountData::$name` cannot be json-encoded the class will return an error message instead.
+
 0.7.0 - 2022-01-16
 
 - Added `$groups` parameter to `ServiceInterface::request`

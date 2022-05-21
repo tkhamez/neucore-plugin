@@ -91,7 +91,7 @@ class ServiceAccountData implements JsonSerializable
             'password' => $this->password,
             'email' => $this->email,
             'status' => $this->status,
-            'name' => $this->name,
+            'name' => $this->getName(),
         ];
     }
 
@@ -158,6 +158,12 @@ class ServiceAccountData implements JsonSerializable
 
     public function getName(): ?string
     {
+        // It seems that some characters cannot be used with json_encode on some systems.
+        // It's better to fail here than to fail later along with other data.
+        if (json_encode($this->name) === false) {
+            return '(cannot json-encode name)';
+        }
+
         return $this->name;
     }
 
