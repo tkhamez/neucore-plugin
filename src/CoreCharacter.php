@@ -8,82 +8,60 @@ class CoreCharacter
 {
     /**
      * EVE character ID.
-     *
-     * @var int
      */
-    public $id;
+    public int $id;
 
     /**
      * Neucore player (account) ID.
      *
      * Will be 0 if the character does not exist in the database.
-     *
-     * @var int
      */
-    public $playerId;
+    public int $playerId;
 
     /**
      * Neucore main character.
-     *
-     * @var bool|null
      */
-    public $main;
+    public ?bool $main = null;
 
     /**
      * EVE character name.
-     *
-     * @var string|null
      */
-    public $name;
+    public ?string $name = null;
 
     /**
      * Character owner hash.
-     *
-     * @var string|null
      */
-    public $ownerHash;
+    public ?string $ownerHash = null;
 
     /**
      * EVE corporation ID.
-     *
-     * @var int|null
      */
-    public $corporationId;
+    public ?int $corporationId = null;
 
     /**
      * EVE corporation name.
-     *
-     * @var string|null
      */
-    public $corporationName;
+    public ?string $corporationName = null;
 
     /**
      * EVE corporation ticker.
-     *
-     * @var string|null
      */
-    public $corporationTicker;
+    public ?string $corporationTicker = null;
 
     /**
      * EVE alliance ID.
-     *
-     * @var int|null
      */
-    public $allianceId;
+    public ?int $allianceId = null;
 
     /**
      * EVE alliance name.
-     *
-     * @var string|null
      */
-    public $allianceName;
+    public ?string $allianceName = null;
 
     /**
      * EVE alliance ticker.
-     *
-     * @var string|null
      */
-    public $allianceTicker;
+    public ?string $allianceTicker = null;
 
     public function __construct(
         int $id,

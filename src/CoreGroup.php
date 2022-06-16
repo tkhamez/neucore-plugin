@@ -8,17 +8,13 @@ class CoreGroup
 {
     /**
      * Neucore group ID.
-     *
-     * @var int
      */
-    public $identifier;
+    public int $identifier;
 
     /**
      * Neucore group name.
-     *
-     * @var string
      */
-    public $name;
+    public string $name;
 
     public function __construct(int $identifier, string $name)
     {

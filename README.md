@@ -1,7 +1,9 @@
 # neucore-plugin
 
-Classes necessary to write a [Neucore](https://github.com/tkhamez/neucore) plugin.
+Classes necessary to write a [Neucore](https://github.com/tkhamez/neucore) service plugin.
 
+Plugins implement the `ServiceInterface` class, for example 
+[Discord Plugin](https://github.com/tkhamez/neucore-discord-plugin).
 
 ## Use
 
@@ -25,6 +27,10 @@ vendor/bin/phpunit --bootstrap vendor/autoload.php tests
 ```
 
 ## Changelog
+
+Next
+
+- Raised minimum PHP version to 7.4.
 
 0.7.1 - 2022-05-21
 

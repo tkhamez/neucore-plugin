@@ -27,45 +27,33 @@ class ServiceAccountData implements JsonSerializable
 
     /**
      * EVE character ID.
-     *
-     * @var int
      */
-    private $characterId;
+    private int $characterId;
 
     /**
      * Service account username.
-     *
-     * @var string|null
      */
-    private $username;
+    private ?string $username;
 
     /**
      * Service account password.
-     *
-     * @var string|null
      */
-    private $password;
+    private ?string $password;
 
     /**
      * Service account e-mail.
-     *
-     * @var string|null
      */
-    private $email;
+    private ?string $email;
 
     /**
      * Service account status.
-     *
-     * @var string|null
      */
-    private $status;
+    private ?string $status;
 
     /**
      * Service account name.
-     *
-     * @var string|null
      */
-    private $name;
+    private ?string $name;
 
     public function __construct(
         int $characterId,

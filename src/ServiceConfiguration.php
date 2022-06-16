@@ -6,22 +6,18 @@ namespace Neucore\Plugin;
 
 class ServiceConfiguration
 {
-    /**
-     * @var int
-     */
-    public $id;
+    public int $id;
 
     /**
      * @var int[]
      */
-    public $requiredGroups = [];
+    public array $requiredGroups = [];
+
+    public string $configurationData = '';
 
     /**
-     * @OA\Property()
-     * @var string
+     * @param int[] $requiredGroups
      */
-    public $configurationData = '';
-
     public function __construct(int $id, array $requiredGroups, string $configurationData)
     {
         $this->id = $id;
