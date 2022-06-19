@@ -41,7 +41,8 @@ interface ServiceInterface
     /**
      * Returns all accounts for the characters provided.
      *
-     * @param CoreCharacter[] $characters All characters belong to the same player, but there may be more.
+     * @param CoreCharacter[] $characters All characters belong to the same player, but there may be more characters
+     *                                    on the player account.
      * @return ServiceAccountData[]
      * @throws Exception In the event of an error when retrieving accounts.
      */
@@ -103,6 +104,17 @@ interface ServiceInterface
      * @throws Exception On error
      */
     public function updatePlayerAccount(CoreCharacter $mainCharacter, array $groups): void;
+
+    /**
+     * Called at the end while merging two player accounts, before getAccounts() and updateAccount() are called.
+     *
+     * This is meant for services that only allow one service account per Core account.
+     *
+     * @return bool True on success (moved account or nothing to move), false if an existing service account could
+     *              not be moved, e.g. because there's already one for the target player account.
+     * @throws Exception On error.
+     */
+    public function moveServiceAccount(int $toPlayerId, int $fromPlayerId): bool;
 
     /**
      * Resets and returns the password for the account of the provided character.

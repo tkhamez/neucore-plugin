@@ -75,6 +75,15 @@ class ServiceInterfaceTest extends TestCase
     /**
      * @throws Exception
      */
+    public function testMoveServiceAccount()
+    {
+        $service = new TestService(new TestLogger(), new ServiceConfiguration(0, [], ''));
+        $this->assertTrue($service->moveServiceAccount(1, 2));
+    }
+
+    /**
+     * @throws Exception
+     */
     public function testResetPassword()
     {
         $service = new TestService(new TestLogger(), new ServiceConfiguration(0, [], ''));

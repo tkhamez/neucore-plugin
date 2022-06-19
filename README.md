@@ -28,9 +28,10 @@ vendor/bin/phpunit --bootstrap vendor/autoload.php tests
 
 ## Changelog
 
-Next
+0.8.0 - 2022-06-19
 
 - Raised minimum PHP version to 7.4.
+- Added `ServiceInterface::moveServiceAccount()`.
 
 0.7.1 - 2022-05-21
 
