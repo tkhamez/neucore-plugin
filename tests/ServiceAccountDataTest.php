@@ -69,4 +69,10 @@ class ServiceAccountDataTest extends TestCase
         $data = new ServiceAccountData(1);
         $this->assertSame('dn', $data->setName('dn')->getName());
     }
+
+    public function testGetNameInvalid()
+    {
+        $data = new ServiceAccountData(1);
+        $this->assertSame('(cannot json-encode name)', $data->setName("1 \xA0 3")->getName());
+    }
 }
