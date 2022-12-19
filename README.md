@@ -1,3 +1,5 @@
+[![build](https://github.com/tkhamez/neucore-plugin/workflows/test/badge.svg)](https://github.com/tkhamez/neucore-plugin/actions)
+
 # neucore-plugin
 
 Classes necessary to write a [Neucore](https://github.com/tkhamez/neucore) service plugin.
@@ -20,10 +22,11 @@ classes from this package, from the Neucore\Plugin namespace.
 If you use other libraries that are available through Neucore, e.g. the Guzzle HTTP client, you should note that 
 these can be updated with a new Neucore version.
 
-## Run tests
+## Dev Env
 
 ```shell
-vendor/bin/phpunit --bootstrap vendor/autoload.php tests
+docker build --tag neucore-plugin .
+docker run -it --mount type=bind,source="$(pwd)",target=/app --workdir /app neucore-plugin /bin/sh
 ```
 
 ## Changelog
