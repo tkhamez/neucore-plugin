@@ -30,7 +30,7 @@ docker run -it --mount type=bind,source="$(pwd)",target=/app --workdir /app neuc
 
 ## Changelog
 
-next
+0.9.0 - 2022-12-25
 
 - Added `ServiceInterface::onConfigurationChange()`.
 - Added `ObjectProvider` class with `getHttpClient` and `getSymfonyYamlParser` methods.
