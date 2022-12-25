@@ -13,14 +13,13 @@ Plugins implement the `ServiceInterface` class, for example
 composer require tkhamez/neucore-plugin
 ```
 
-Note: You can only use classes loaded by Neucore, this includes classes from the service plugin 
-configuration namespace.
+Neucore automatically loads all classes from the namespace that is configured with the
+"PSR-4 Prefix" configuration option and from this package, the `Neucore\Plugin` namespace.
 
-You should not use classes from the Neucore namespace, because they can change without notice. Except of course 
-classes from this package, from the Neucore\Plugin namespace.
+Besides that, **do not use** any class from Neucore or any library that Neucore provides. Those can change or
+be removed without notice. 
 
-If you use other libraries that are available through Neucore, e.g. the Guzzle HTTP client, you should note that 
-these can be updated with a new Neucore version.
+Also note that libraries from objects provided by the `ObjectProvider` can be updated with a new Neucore version.
 
 ## Dev Env
 
@@ -34,6 +33,7 @@ docker run -it --mount type=bind,source="$(pwd)",target=/app --workdir /app neuc
 next
 
 - Added `ServiceInterface::onConfigurationChange()`.
+- Added `ObjectProvider` class with `getHttpClient` and `getSymfonyYamlParser` methods.
 - Dropped PHP 7.4 support, minimum required version is now 8.0.
 - Allow psr/log version 1.1, 2 or 3.
 
