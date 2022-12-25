@@ -31,6 +31,11 @@ docker run -it --mount type=bind,source="$(pwd)",target=/app --workdir /app neuc
 
 ## Changelog
 
+next
+
+- Dropped PHP 7.4 support, minimum required version is now 8.0.
+- Allow psr/log version 1.1, 2 or 3.
+
 0.8.0 - 2022-06-19
 
 - Raised minimum PHP version to 7.4.
@@ -50,24 +55,24 @@ docker run -it --mount type=bind,source="$(pwd)",target=/app --workdir /app neuc
 
 0.5.0 - 2021-09-17
 
-- Added $playerId property to CoreCharacter.
-- Added STATUS_NONMEMBER to ServiceAccountData.
-- Added ServiceConfiguration class.
-- Replaced $configurationData with ServiceConfiguration object in ServiceInterface constructor.
-- Removed $groups parameter from ServiceInterface::getAccounts()
-- Added $mainCharacter parameter to ServiceInterface::updateAccount().
-- Added ServiceInterface::updatePlayerAccount().
-- Added ServiceInterface::getAllPlayerAccounts().
-- Added ServiceInterface::request().
+- Added `$playerId` property to `CoreCharacter`.
+- Added `STATUS_NONMEMBER` to `ServiceAccountData`.
+- Added `ServiceConfiguration` class.
+- Replaced `$configurationData` with `ServiceConfiguration` object in `ServiceInterface` constructor.
+- Removed `$groups` parameter from `ServiceInterface::getAccounts()`
+- Added `$mainCharacter` parameter to `ServiceInterface::updateAccount()`.
+- Added `ServiceInterface::updatePlayerAccount()`.
+- Added `ServiceInterface::getAllPlayerAccounts()`.
+- Added `ServiceInterface::request()`.
 
 0.4.0 - 2021-09-04
-- Added $displayName to ServiceAccountData.
+- Added `$displayName` to `ServiceAccountData`.
 
 0.3.0 - 2021-09-03
-- Added $configurationData argument to the ServiceInterface constructor.
+- Added `$configurationData` argument to the `ServiceInterface` constructor.
 
 0.2.0 - 2021-01-29
-- Added ServiceInterface::getAllAccounts
+- Added `ServiceInterface::getAllAccounts`
 
 0.1.1 - 2021-01-08
 - Require json extension in composer.json

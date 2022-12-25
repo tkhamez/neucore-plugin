@@ -12,7 +12,6 @@ use Neucore\Plugin\ServiceConfiguration;
 use Neucore\Plugin\ServiceInterface;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
-use Psr\Log\Test\TestLogger;
 
 class ServiceInterfaceTest extends TestCase
 {
