@@ -69,4 +69,8 @@ class TestService implements ServiceInterface
     ): ResponseInterface {
         return $response;
     }
+
+    public function onConfigurationChange(): void
+    {
+    }
 }

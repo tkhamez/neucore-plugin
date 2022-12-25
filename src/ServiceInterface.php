@@ -169,4 +169,11 @@ interface ServiceInterface
         ResponseInterface $response,
         array $groups
     ): ResponseInterface;
+
+    /**
+     * Called when the service configuration is saved, after the data was successfully written to the database.
+     *
+     * @throws Exception
+     */
+    public function onConfigurationChange(): void;
 }

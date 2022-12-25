@@ -121,4 +121,14 @@ class ServiceInterfaceTest extends TestCase
             [new CoreGroup(1, 'group')]
         ));
     }
+
+    /**
+     * @throws Exception
+     */
+    public function testOnConfigurationChange()
+    {
+        $service = new TestService(new TestLogger(), new ServiceConfiguration(0, [], ''));
+        /** @noinspection PhpVoidFunctionResultUsedInspection */
+        $this->assertNull($service->onConfigurationChange());
+    }
 }

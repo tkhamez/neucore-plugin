@@ -33,6 +33,7 @@ docker run -it --mount type=bind,source="$(pwd)",target=/app --workdir /app neuc
 
 next
 
+- Added `ServiceInterface::onConfigurationChange()`.
 - Dropped PHP 7.4 support, minimum required version is now 8.0.
 - Allow psr/log version 1.1, 2 or 3.
 
