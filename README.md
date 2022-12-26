@@ -4,22 +4,8 @@
 
 Classes necessary to write a [Neucore](https://github.com/tkhamez/neucore) service plugin.
 
-Plugins implement the `ServiceInterface` class, for example 
-[Discord Plugin](https://github.com/tkhamez/neucore-discord-plugin).
-
-## Use
-
-```shell
-composer require tkhamez/neucore-plugin
-```
-
-Neucore automatically loads all classes from the namespace that is configured with the
-"PSR-4 Prefix" configuration option and from this package, the `Neucore\Plugin` namespace.
-
-Besides that, **do not use** any class from Neucore or any library that Neucore provides. Those can change or
-be removed without notice. 
-
-Also note that libraries from objects provided by the `ObjectProvider` can be updated with a new Neucore version.
+Documentation can be found in the Neucore repository at 
+https://github.com/tkhamez/neucore/blob/main/doc/Plugins.md.
 
 ## Dev Env
 
