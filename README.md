@@ -16,6 +16,10 @@ docker run -it --mount type=bind,source="$(pwd)",target=/app --workdir /app neuc
 
 ## Changelog
 
+0.9.2 - 2022-12-28
+
+- Added plugin.yml.
+
 0.9.1 - 2022-12-27
 
 - Added `ObjectProvider` class with `createHttpRequest` method.
