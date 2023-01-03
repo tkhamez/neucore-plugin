@@ -176,4 +176,12 @@ interface ServiceInterface
      * @throws Exception
      */
     public function onConfigurationChange(): void;
+
+    /**
+     * Returns service accounts that matches the query name (partial match, min 3 characters).
+     *
+     * @return ServiceAccountData[]
+     * @throws Exception
+     */
+    public function search(string $query): array;
 }

@@ -131,4 +131,21 @@ class ServiceInterfaceTest extends TestCase
         /** @noinspection PhpVoidFunctionResultUsedInspection */
         $this->assertNull($service->onConfigurationChange());
     }
+
+    /**
+     * @throws Exception
+     */
+    public function testSearch()
+    {
+        $service = new TestService(new TestLogger(), new ServiceConfiguration(0, [], ''));
+        $result = $service->search('name');
+        $this->assertSame(1, count($result));
+        $this->assertInstanceOf(ServiceAccountData::class, $result[0]);
+        $this->assertSame(100, $result[0]->getCharacterId());
+        $this->assertSame('username', $result[0]->getUsername());
+        $this->assertNull($result[0]->getPassword());
+        $this->assertNull($result[0]->getEmail());
+        $this->assertNull($result[0]->getStatus());
+        $this->assertSame('Name', $result[0]->getName());
+    }
 }

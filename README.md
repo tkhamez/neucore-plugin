@@ -16,6 +16,10 @@ docker run -it --mount type=bind,source="$(pwd)",target=/app --workdir /app neuc
 
 ## Changelog
 
+0.10.0 - yyyy-mm-dd
+
+- Added `ServiceInterface::search()`.
+
 0.9.2 - 2022-12-28
 
 - Added plugin.yml.
