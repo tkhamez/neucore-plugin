@@ -1,13 +1,10 @@
 
 ###
-### Required configuration
+### Required configuration for all plugins
 ###
 
 # A name for the plugin
 name: Example
-
-# Type of the plugin. The only possible value for now is "service".
-type: service
 
 # Full class name of class implementing Neucore\Plugin\ServiceInterface.
 phpClass: Vendor\Neucore\Plugin\Name\Service
@@ -17,6 +14,11 @@ psr4Prefix: Vendor\Neucore\Plugin\Name
 
 # Relative (to this file) path to the directory containing the classes of the above namespace.
 psr4Path: src
+
+
+###
+### Required configuration for service plugins
+###
 
 # Defines if this service allows only one account per player instead of one per character.
 oneAccount: true
@@ -40,7 +42,16 @@ actions:
 
 
 ###
-### Optional configuration
+### Optional configuration for all plugins
+###
+
+# Additional configuration for the plugin (supports multiline text). This is provided as the value of
+# the PluginConfiguration::$configurationData property.
+configurationData:
+
+
+###
+### Optional configuration for service plugins
 ###
 
 # List of link buttons. Placeholders for URL: {plugin_id}, {username}, {password}, {email}
@@ -61,6 +72,3 @@ textRegister:
 
 # Text below an account with status "pending" (supports multiline text).
 textPending:
-
-# Additional configuration for the plugin (supports multiline text).
-configurationData:

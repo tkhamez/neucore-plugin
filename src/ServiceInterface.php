@@ -4,17 +4,13 @@ declare(strict_types=1);
 
 namespace Neucore\Plugin;
 
-use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ServerRequestInterface;
-use Psr\Log\LoggerInterface;
-
 /**
  * Methods to implement for a Neucore service.
  *
  * The $groups parameter of all methods contains groups from the player of the character. This respects the
  * "Groups Deactivation" configuration, including the delay.
  */
-interface ServiceInterface
+interface ServiceInterface extends PluginInterface
 {
     /**
      * A required e-mail address was not provided.
@@ -35,8 +31,6 @@ interface ServiceInterface
      * The account for the character was not found.
      */
     public const ERROR_ACCOUNT_NOT_FOUND = 'account_not_found';
-
-    public function __construct(LoggerInterface $logger, ServiceConfiguration $serviceConfiguration);
 
     /**
      * Returns all accounts for the characters provided.
@@ -150,32 +144,6 @@ interface ServiceInterface
      * @throws Exception
      */
     public function getAllPlayerAccounts(): array;
-
-    /**
-     * Called by the URL /plugin/{id}/{name}.
-     *
-     * {id} is the Service ID from Neucore.
-     * Only called if the logged-in user is a member of the required groups, if applicable.
-     *
-     * @param CoreCharacter $coreCharacter The main character of the player
-     * @param string $name The "{name}" part of the URL.
-     * @param CoreGroup[] $groups
-     * @throws Exception
-     */
-    public function request(
-        CoreCharacter $coreCharacter,
-        string $name,
-        ServerRequestInterface $request,
-        ResponseInterface $response,
-        array $groups
-    ): ResponseInterface;
-
-    /**
-     * Called when the service configuration is saved, after the data was successfully written to the database.
-     *
-     * @throws Exception
-     */
-    public function onConfigurationChange(): void;
 
     /**
      * Returns service accounts that matches the query name (partial match, min 3 characters).

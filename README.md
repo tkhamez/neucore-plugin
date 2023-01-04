@@ -18,7 +18,22 @@ docker run -it --mount type=bind,source="$(pwd)",target=/app --workdir /app neuc
 
 0.10.0 - yyyy-mm-dd
 
-- Added `ServiceInterface::search()`.
+This release adds (among others) a new "general" plugin type.
+
+Breaking changes:
+
+- Added `ServiceInterface::search` method.
+- Changed `ServiceInterface::__construct` signature.
+- Changed `ServiceInterface::request` signature.
+- Renamed `ServiceConfiguration` class to `PluginConfiguration`
+
+Other changes:
+
+- Added plugin type "general".
+- Added `GeneralInterface` for general (not service) plugins.
+- Added `FactoryInterface`.
+- Added `CoreAccount` and `CoreRole` classes.
+- Removed "type" from plugin.yml (it's determined by the implemented interfaces).
 
 0.9.2 - 2022-12-28
 

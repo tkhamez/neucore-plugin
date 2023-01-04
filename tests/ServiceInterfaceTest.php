@@ -5,16 +5,22 @@ declare(strict_types=1);
 namespace Tests;
 
 use Neucore\Plugin\CoreCharacter;
-use Neucore\Plugin\CoreGroup;
 use Neucore\Plugin\Exception;
+use Neucore\Plugin\PluginInterface;
 use Neucore\Plugin\ServiceAccountData;
-use Neucore\Plugin\ServiceConfiguration;
+use Neucore\Plugin\PluginConfiguration;
 use Neucore\Plugin\ServiceInterface;
 use PHPUnit\Framework\TestCase;
-use Psr\Http\Message\ResponseInterface;
 
 class ServiceInterfaceTest extends TestCase
 {
+    public function testConstruct()
+    {
+        $obj = new TestService(new TestLogger(), new PluginConfiguration(0, [], ''), new TestFactory());
+        $this->assertInstanceOf(PluginInterface::class, $obj);
+        $this->assertInstanceOf(ServiceInterface::class, $obj);
+    }
+
     public function testConstants()
     {
         $this->assertSame('missing_email', ServiceInterface::ERROR_MISSING_EMAIL);
@@ -23,20 +29,12 @@ class ServiceInterfaceTest extends TestCase
         $this->assertSame('account_not_found', ServiceInterface::ERROR_ACCOUNT_NOT_FOUND);
     }
 
-    public function testConstruct()
-    {
-        $this->assertInstanceOf(
-            ServiceInterface::class,
-            new TestService(new TestLogger(), new ServiceConfiguration(0, [], ''))
-        );
-    }
-
     /**
      * @throws Exception
      */
     public function testGetAccounts()
     {
-        $service = new TestService(new TestLogger(), new ServiceConfiguration(0, [], ''));
+        $service = new TestService(new TestLogger(), new PluginConfiguration(0, [], ''), new TestFactory());
         $this->assertSame([], $service->getAccounts([]));
     }
 
@@ -45,7 +43,7 @@ class ServiceInterfaceTest extends TestCase
      */
     public function testRegister()
     {
-        $service = new TestService(new TestLogger(), new ServiceConfiguration(0, [], ''));
+        $service = new TestService(new TestLogger(), new PluginConfiguration(0, [], ''), new TestFactory());
         $this->assertInstanceOf(
             ServiceAccountData::class,
             $service->register(new CoreCharacter(10, 1), [], '', []));
@@ -56,7 +54,7 @@ class ServiceInterfaceTest extends TestCase
      */
     public function testUpdateAccount()
     {
-        $service = new TestService(new TestLogger(), new ServiceConfiguration(0, [], ''));
+        $service = new TestService(new TestLogger(), new PluginConfiguration(0, [], ''), new TestFactory());
         /** @noinspection PhpVoidFunctionResultUsedInspection */
         $this->assertNull($service->updateAccount(new CoreCharacter(10, 1), [], new CoreCharacter(10, 1)));
     }
@@ -66,7 +64,7 @@ class ServiceInterfaceTest extends TestCase
      */
     public function testUpdatePlayerAccount()
     {
-        $service = new TestService(new TestLogger(), new ServiceConfiguration(0, [], ''));
+        $service = new TestService(new TestLogger(), new PluginConfiguration(0, [], ''), new TestFactory());
         /** @noinspection PhpVoidFunctionResultUsedInspection */
         $this->assertNull($service->updatePlayerAccount(new CoreCharacter(10, 1), []));
     }
@@ -76,7 +74,7 @@ class ServiceInterfaceTest extends TestCase
      */
     public function testMoveServiceAccount()
     {
-        $service = new TestService(new TestLogger(), new ServiceConfiguration(0, [], ''));
+        $service = new TestService(new TestLogger(), new PluginConfiguration(0, [], ''), new TestFactory());
         $this->assertTrue($service->moveServiceAccount(1, 2));
     }
 
@@ -85,7 +83,7 @@ class ServiceInterfaceTest extends TestCase
      */
     public function testResetPassword()
     {
-        $service = new TestService(new TestLogger(), new ServiceConfiguration(0, [], ''));
+        $service = new TestService(new TestLogger(), new PluginConfiguration(0, [], ''), new TestFactory());
         $this->assertSame('123', $service->resetPassword(1));
     }
 
@@ -94,7 +92,7 @@ class ServiceInterfaceTest extends TestCase
      */
     public function testGetAllAccounts()
     {
-        $service = new TestService(new TestLogger(), new ServiceConfiguration(0, [], ''));
+        $service = new TestService(new TestLogger(), new PluginConfiguration(0, [], ''), new TestFactory());
         $this->assertSame([100], $service->getAllAccounts());
     }
 
@@ -103,33 +101,8 @@ class ServiceInterfaceTest extends TestCase
      */
     public function testGetAllPlayerAccounts()
     {
-        $service = new TestService(new TestLogger(), new ServiceConfiguration(0, [], ''));
+        $service = new TestService(new TestLogger(), new PluginConfiguration(0, [], ''), new TestFactory());
         $this->assertSame([1], $service->getAllPlayerAccounts());
-    }
-
-    /**
-     * @throws Exception
-     */
-    public function testRequest()
-    {
-        $service = new TestService(new TestLogger(), new ServiceConfiguration(0, [], ''));
-        $this->assertInstanceOf(ResponseInterface::class, $service->request(
-            new CoreCharacter(10, 1),
-            'name',
-            new TestRequest(),
-            new TestResponse(),
-            [new CoreGroup(1, 'group')]
-        ));
-    }
-
-    /**
-     * @throws Exception
-     */
-    public function testOnConfigurationChange()
-    {
-        $service = new TestService(new TestLogger(), new ServiceConfiguration(0, [], ''));
-        /** @noinspection PhpVoidFunctionResultUsedInspection */
-        $this->assertNull($service->onConfigurationChange());
     }
 
     /**
@@ -137,8 +110,10 @@ class ServiceInterfaceTest extends TestCase
      */
     public function testSearch()
     {
-        $service = new TestService(new TestLogger(), new ServiceConfiguration(0, [], ''));
+        $service = new TestService(new TestLogger(), new PluginConfiguration(0, [], ''), new TestFactory());
+
         $result = $service->search('name');
+
         $this->assertSame(1, count($result));
         $this->assertInstanceOf(ServiceAccountData::class, $result[0]);
         $this->assertSame(100, $result[0]->getCharacterId());

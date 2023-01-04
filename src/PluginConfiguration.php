@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Neucore\Plugin;
 
-class ServiceConfiguration
+class PluginConfiguration
 {
     public int $id;
 

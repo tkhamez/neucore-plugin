@@ -7,6 +7,7 @@ namespace Tests;
 use Neucore\Plugin\CoreAccount;
 use Neucore\Plugin\CoreCharacter;
 use Neucore\Plugin\FactoryInterface;
+use Neucore\Plugin\GeneralInterface;
 use Neucore\Plugin\ServiceAccountData;
 use Neucore\Plugin\PluginConfiguration;
 use Neucore\Plugin\ServiceInterface;
@@ -14,7 +15,7 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Log\LoggerInterface;
 
-class TestService implements ServiceInterface
+class TestGeneralAndService implements GeneralInterface, ServiceInterface
 {
     public function __construct(
         LoggerInterface $logger,
