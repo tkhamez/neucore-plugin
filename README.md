@@ -22,10 +22,11 @@ This release adds (among others) a new "general" plugin type.
 
 Breaking changes:
 
-- Added `ServiceInterface::search` method.
 - Changed `ServiceInterface::__construct` signature.
 - Changed `ServiceInterface::request` signature.
 - Renamed `ServiceConfiguration` class to `PluginConfiguration`
+- Added `ServiceInterface::search` method.
+- Removed `ObjectProvider` (replaced by new `FactoryInterface` object provided in `ServiceConfiguration::__construct`).
 
 Other changes:
 
