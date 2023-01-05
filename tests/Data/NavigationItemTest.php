@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Tests;
+namespace Tests\Data;
 
-use Neucore\Plugin\NavigationItem;
+use Neucore\Plugin\Data\NavigationItem;
 use PHPUnit\Framework\TestCase;
 
 class NavigationItemTest extends TestCase

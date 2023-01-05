@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Tests;
+namespace Tests\Core;
 
+use Neucore\Plugin\Core\EsiClientInterface;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
@@ -16,7 +17,7 @@ class FactoryInterfaceTest extends TestCase
      */
     public function testConstruct()
     {
-        $this->expectExceptionMessage('Method Tests\TestFactory::__construct() does not exist');
+        $this->expectExceptionMessage('Method Tests\Core\TestFactory::__construct() does not exist');
         new \ReflectionMethod(new TestFactory(), '__construct');
     }
 
@@ -56,6 +57,18 @@ class FactoryInterfaceTest extends TestCase
     {
         $method = new \ReflectionMethod(new TestFactory(), 'createSymfonyYamlParser');
         $this->assertSame(Parser::class, $method->getReturnType()->getName());
+
+        $params = $method->getParameters();
+        $this->assertSame(0, count($params));
+    }
+
+    /**
+     * @throws \ReflectionException
+     */
+    public function testGetEsiClient()
+    {
+        $method = new \ReflectionMethod(new TestFactory(), 'getEsiClient');
+        $this->assertSame(EsiClientInterface::class, $method->getReturnType()->getName());
 
         $params = $method->getParameters();
         $this->assertSame(0, count($params));

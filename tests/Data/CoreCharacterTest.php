@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Tests;
+namespace Tests\Data;
 
-use Neucore\Plugin\CoreCharacter;
+use Neucore\Plugin\Data\CoreCharacter;
 use PHPUnit\Framework\TestCase;
 
 class CoreCharacterTest extends TestCase

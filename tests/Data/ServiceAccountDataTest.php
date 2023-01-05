@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Tests;
+namespace Tests\Data;
 
-use Neucore\Plugin\ServiceAccountData;
+use Neucore\Plugin\Data\ServiceAccountData;
 use PHPUnit\Framework\TestCase;
 
 class ServiceAccountDataTest extends TestCase

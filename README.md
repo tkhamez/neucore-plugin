@@ -24,9 +24,10 @@ Breaking changes:
 
 - Changed `ServiceInterface::__construct` signature.
 - Changed `ServiceInterface::request` signature.
-- Renamed `ServiceConfiguration` class to `PluginConfiguration`
+- Renamed `ServiceConfiguration` class to `PluginConfiguration` and moved to `Neucore\Plugin\Data` namespace.
 - Added `ServiceInterface::search` method.
 - Removed `ObjectProvider` (replaced by new `FactoryInterface` object provided in `ServiceConfiguration::__construct`).
+- Moved `CoreCharacter`, `CoreGroup` and `ServiceAccountData` to `Neucore\Plugin\Data` namespace.
 
 Other changes:
 

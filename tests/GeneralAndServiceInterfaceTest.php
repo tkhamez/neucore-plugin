@@ -4,15 +4,16 @@ declare(strict_types=1);
 
 namespace Tests;
 
-use Neucore\Plugin\CoreAccount;
-use Neucore\Plugin\CoreCharacter;
+use Neucore\Plugin\Data\CoreAccount;
+use Neucore\Plugin\Data\CoreCharacter;
+use Neucore\Plugin\Data\PluginConfiguration;
 use Neucore\Plugin\Exception;
 use Neucore\Plugin\GeneralInterface;
-use Neucore\Plugin\PluginConfiguration;
 use Neucore\Plugin\PluginInterface;
 use Neucore\Plugin\ServiceInterface;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
+use Tests\Core\TestFactory;
 
 class GeneralAndServiceInterfaceTest extends TestCase
 {

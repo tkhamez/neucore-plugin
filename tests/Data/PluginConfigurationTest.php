@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Tests;
+namespace Tests\Data;
 
-use Neucore\Plugin\PluginConfiguration;
+use Neucore\Plugin\Data\PluginConfiguration;
 use PHPUnit\Framework\TestCase;
 
 class PluginConfigurationTest extends TestCase

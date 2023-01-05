@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Neucore\Plugin;
+namespace Neucore\Plugin\Core;
 
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
@@ -20,4 +20,6 @@ interface FactoryInterface
     ): RequestInterface;
 
     public function createSymfonyYamlParser(): Parser;
+
+    public function getEsiClient(): EsiClientInterface;
 }

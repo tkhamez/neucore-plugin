@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Tests;
+namespace Tests\Data;
 
-use Neucore\Plugin\CoreAccount;
-use Neucore\Plugin\CoreCharacter;
-use Neucore\Plugin\CoreGroup;
-use Neucore\Plugin\CoreRole;
+use Neucore\Plugin\Data\CoreAccount;
+use Neucore\Plugin\Data\CoreCharacter;
+use Neucore\Plugin\Data\CoreGroup;
+use Neucore\Plugin\Data\CoreRole;
 use PHPUnit\Framework\TestCase;
 
 class CoreAccountTest extends TestCase

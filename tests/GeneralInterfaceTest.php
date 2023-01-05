@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace Tests;
 
+use Neucore\Plugin\Data\NavigationItem;
+use Neucore\Plugin\Data\PluginConfiguration;
 use Neucore\Plugin\GeneralInterface;
-use Neucore\Plugin\NavigationItem;
-use Neucore\Plugin\PluginConfiguration;
 use Neucore\Plugin\PluginInterface;
 use PHPUnit\Framework\TestCase;
+use Tests\Core\TestFactory;
 
 class GeneralInterfaceTest extends TestCase
 {

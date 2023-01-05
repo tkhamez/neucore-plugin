@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Neucore\Plugin;
 
+use Neucore\Plugin\Data\CoreCharacter;
+use Neucore\Plugin\Data\CoreGroup;
+use Neucore\Plugin\Data\ServiceAccountData;
+
 /**
  * Methods to implement for a Neucore service.
  *

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Tests;
+namespace Tests\Data;
 
-use Neucore\Plugin\CoreRole;
+use Neucore\Plugin\Data\CoreRole;
 use PHPUnit\Framework\TestCase;
 
 class CoreRoleTest extends TestCase

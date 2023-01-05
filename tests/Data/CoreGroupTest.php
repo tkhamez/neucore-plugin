@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Tests;
+namespace Tests\Data;
 
-use Neucore\Plugin\CoreGroup;
+use Neucore\Plugin\Data\CoreGroup;
 use PHPUnit\Framework\TestCase;
 
 class CoreGroupTest extends TestCase

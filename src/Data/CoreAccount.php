@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Neucore\Plugin;
+namespace Neucore\Plugin\Data;
 
 class CoreAccount
 {
