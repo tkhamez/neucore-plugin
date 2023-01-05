@@ -8,6 +8,7 @@ use Neucore\Plugin\CoreAccount;
 use Neucore\Plugin\CoreCharacter;
 use Neucore\Plugin\FactoryInterface;
 use Neucore\Plugin\GeneralInterface;
+use Neucore\Plugin\NavigationItem;
 use Neucore\Plugin\ServiceAccountData;
 use Neucore\Plugin\PluginConfiguration;
 use Neucore\Plugin\ServiceInterface;
@@ -35,6 +36,11 @@ class TestGeneralAndService implements GeneralInterface, ServiceInterface
         ?CoreAccount $coreAccount,
     ): ResponseInterface {
         return $response;
+    }
+
+    public function getNavigationItems(): array
+    {
+        return [];
     }
 
     public function getAccounts(array $characters): array

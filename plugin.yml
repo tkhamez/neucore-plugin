@@ -24,21 +24,14 @@ psr4Path: src
 oneAccount: true
 
 # List of available account properties, possible values: username, password, email, status, name
-properties:
-  - username
-  - password
-  - email
-  - status
-  - name
+properties: [username, status]
 
 # If this is not enabled and the account contains a password (see properties), the user will be able to see
 # it only once after it is reset (see actions).
 showPassword: false
 
 # List of actions, possible values: update-account, reset-password
-actions:
-  - update-account
-  - reset-password
+actions: [update-account]
 
 
 ###

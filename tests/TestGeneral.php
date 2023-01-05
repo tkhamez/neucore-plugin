@@ -8,6 +8,7 @@ use Neucore\Plugin\CoreAccount;
 use Neucore\Plugin\Exception;
 use Neucore\Plugin\FactoryInterface;
 use Neucore\Plugin\GeneralInterface;
+use Neucore\Plugin\NavigationItem;
 use Neucore\Plugin\PluginConfiguration;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -33,5 +34,10 @@ class TestGeneral implements GeneralInterface
         ?CoreAccount $coreAccount,
     ): ResponseInterface {
         throw new Exception();
+    }
+
+    public function getNavigationItems(): array
+    {
+        return [new NavigationItem(NavigationItem::PARENT_ROOT, 'Name', '/test')];
     }
 }

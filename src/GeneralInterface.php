@@ -6,5 +6,8 @@ namespace Neucore\Plugin;
 
 interface GeneralInterface extends PluginInterface
 {
-
+    /**
+     * @return NavigationItem[]
+     */
+    public function getNavigationItems(): array;
 }
