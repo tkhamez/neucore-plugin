@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Neucore\Plugin\Core;
 
-use Neucore\Plugin\Exception;
 use Psr\Http\Message\ResponseInterface;
 
 interface EsiClientInterface
