@@ -6,7 +6,7 @@
 # A name for the plugin
 name: Example
 
-# Full class name of class implementing Neucore\Plugin\ServiceInterface.
+# Full class name of class implementing Neucore\Plugin\ServiceInterface or Neucore\Plugin\GeneralInterface.
 phpClass: Vendor\Neucore\Plugin\Name\Service
 
 # PHP namespace that should be loaded by the PSR-4 autoloader.
