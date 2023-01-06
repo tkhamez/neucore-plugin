@@ -9,6 +9,11 @@ use Psr\Http\Message\ResponseInterface;
 
 class TestEsiClient implements EsiClientInterface
 {
+    public function getErrorLimitRemaining(): int
+    {
+        return 15;
+    }
+
     /** @noinspection PhpInconsistentReturnPointsInspection */
     public function request(
         string $esiPath,
