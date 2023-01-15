@@ -26,6 +26,12 @@ class CoreAccount
     public array $memberGroups;
 
     /**
+     * True if the "Groups Deactivation" feature is enabled and groups for this account are currently deactivated
+     * (delay is respected).
+     */
+    public bool $groupsDeactivated = false;
+
+    /**
      * All groups of which the player is a manager.
      *
      * @var CoreGroup[]
@@ -59,5 +65,15 @@ class CoreAccount
         $this->memberGroups = $memberGroups;
         $this->managerGroups = $managerGroups;
         $this->roles = $roles;
+    }
+
+    /**
+     * Returns groups if they are not deactivated.
+     *
+     * @return CoreGroup[]
+     */
+    public function getMemberGroups(): array
+    {
+        return $this->groupsDeactivated ? [] : $this->memberGroups;
     }
 }

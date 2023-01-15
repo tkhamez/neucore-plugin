@@ -16,6 +16,11 @@ docker run -it --mount type=bind,source="$(pwd)",target=/app --workdir /app neuc
 
 ## Changelog
 
+0.11.0 - 2023-01-15
+
+- Added `CoreAccount::$groupsDeactivated`.
+- Added `CoreAccount::getMemberGroups()`.
+
 0.10.0 - 2023-01-06
 
 This release adds (among others) a new "general" plugin type.

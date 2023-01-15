@@ -31,10 +31,22 @@ class CoreAccountTest extends TestCase
         $this->assertSame(20, $account->memberGroups[0]->identifier);
         $this->assertSame('two', $account->memberGroups[0]->name);
 
+        $this->assertFalse($account->groupsDeactivated);
+
         $this->assertSame(30, $account->managerGroups[0]->identifier);
         $this->assertSame('three', $account->managerGroups[0]->name);
 
         $this->assertSame(4, $account->roles[0]->identifier);
         $this->assertSame('four', $account->roles[0]->name);
+    }
+
+    public function testGetMemberGroups()
+    {
+        $account = new CoreAccount(new CoreCharacter(100, 1), [], [new CoreGroup(20, 'two')], [], []);
+
+        $this->assertSame(1, count($account->getMemberGroups()));
+
+        $account->groupsDeactivated = true;
+        $this->assertSame(0, count($account->getMemberGroups()));
     }
 }
