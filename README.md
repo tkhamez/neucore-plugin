@@ -7,6 +7,8 @@ Classes necessary to write a [Neucore](https://github.com/tkhamez/neucore) servi
 Documentation can be found in the Neucore repository at 
 https://github.com/tkhamez/neucore/blob/main/doc/Plugins.md.
 
+For a list of plugins see https://github.com/tkhamez/neucore#plugins-and-other-related-software.
+
 ## Dev Env
 
 ```shell
