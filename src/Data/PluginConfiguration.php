@@ -8,6 +8,8 @@ class PluginConfiguration
 {
     public int $id;
 
+    public bool $active;
+
     /**
      * @var int[]
      */
@@ -18,9 +20,10 @@ class PluginConfiguration
     /**
      * @param int[] $requiredGroups
      */
-    public function __construct(int $id, array $requiredGroups, string $configurationData)
+    public function __construct(int $id, bool $active, array $requiredGroups, string $configurationData)
     {
         $this->id = $id;
+        $this->active = $active;
         $this->requiredGroups = $requiredGroups;
         $this->configurationData = $configurationData;
     }

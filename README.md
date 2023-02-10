@@ -18,6 +18,10 @@ docker run -it --mount type=bind,source="$(pwd)",target=/app --workdir /app neuc
 
 ## Changelog
 
+next
+
+- Added `PluginConfiguration::$active`.
+
 0.11.0 - 2023-01-15
 
 - Added `CoreAccount::$groupsDeactivated`.
