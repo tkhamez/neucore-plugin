@@ -2,7 +2,7 @@
 
 # neucore-plugin
 
-Classes necessary to write a [Neucore](https://github.com/tkhamez/neucore) service plugin.
+Classes necessary to write a [Neucore](https://github.com/tkhamez/neucore) plugin.
 
 Documentation can be found in the Neucore repository at 
 https://github.com/tkhamez/neucore/blob/main/doc/Plugins.md.
@@ -21,6 +21,7 @@ docker run -it --mount type=bind,source="$(pwd)",target=/app --workdir /app neuc
 next
 
 - Added `PluginConfiguration::$active`.
+- Added `NavigationItem::$roles`.
 
 0.11.0 - 2023-01-15
 

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Data;
 
+use Neucore\Plugin\Data\CoreRole;
 use Neucore\Plugin\Data\NavigationItem;
 use PHPUnit\Framework\TestCase;
 
@@ -20,8 +21,15 @@ class NavigationItemTest extends TestCase
     public function testJsonSerialize()
     {
         $this->assertSame(
-            ['parent' => NavigationItem::PARENT_ROOT, 'name' => 'Name', 'url' => '/test', 'target' => '_self'],
-            (new NavigationItem(NavigationItem::PARENT_ROOT, 'Name', '/test'))->jsonSerialize()
+            [
+                'parent' => NavigationItem::PARENT_ROOT,
+                'name' => 'Name',
+                'url' => '/test',
+                'target' => '_blank',
+                'roles' => [CoreRole::PLUGIN_ADMIN],
+            ],
+            (new NavigationItem(NavigationItem::PARENT_ROOT, 'Name', '/test', '_blank', [CoreRole::PLUGIN_ADMIN]))
+                ->jsonSerialize()
         );
     }
 
@@ -52,8 +60,26 @@ class NavigationItemTest extends TestCase
     public function testGetTarget()
     {
         $this->assertSame(
+            '_self',
+            (new NavigationItem(NavigationItem::PARENT_ROOT, 'Name', '/test'))->getTarget()
+        );
+        $this->assertSame(
             '_blank',
             (new NavigationItem(NavigationItem::PARENT_ROOT, 'Name', '/test', '_blank'))->getTarget()
+        );
+    }
+
+    public function testGetRoles()
+    {
+        $this->assertSame(
+            [CoreRole::USER],
+            (new NavigationItem(NavigationItem::PARENT_ROOT, 'Name', '/test'))
+                ->getRoles()
+        );
+        $this->assertSame(
+            [CoreRole::ANONYMOUS],
+            (new NavigationItem(NavigationItem::PARENT_ROOT, 'Name', '/test', '_self', [CoreRole::ANONYMOUS]))
+                ->getRoles()
         );
     }
 }

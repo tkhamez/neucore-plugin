@@ -34,6 +34,14 @@ class NavigationItem implements \JsonSerializable
          * Target attribute for the link.
          */
         private string $target = '_self',
+
+        /**
+         * Role a user must have (any one of them).
+         *
+         * @var string[]
+         * @see CoreRole
+         */
+        private array $roles = [CoreRole::USER],
     ) {
     }
 
@@ -44,6 +52,7 @@ class NavigationItem implements \JsonSerializable
             'name' => $this->name,
             'url' => $this->url,
             'target' => $this->target,
+            'roles' => $this->roles,
         ];
     }
 
@@ -65,5 +74,13 @@ class NavigationItem implements \JsonSerializable
     public function getTarget(): string
     {
         return $this->target;
+    }
+
+    /**
+     * @return string[]
+     */
+    public function getRoles(): array
+    {
+        return $this->roles;
     }
 }
