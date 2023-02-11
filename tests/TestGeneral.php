@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Tests;
 
+use Neucore\Plugin\Core\OutputInterface;
 use Neucore\Plugin\Data\CoreAccount;
 use Neucore\Plugin\Data\CoreRole;
 use Neucore\Plugin\Exception;
@@ -40,5 +41,10 @@ class TestGeneral implements GeneralInterface
     public function getNavigationItems(): array
     {
         return [new NavigationItem(NavigationItem::PARENT_ROOT, 'Name', '/test', '_self', [CoreRole::USER])];
+    }
+
+    public function command(array $arguments, array $options, OutputInterface $output): void
+    {
+        $output->write('executed');
     }
 }

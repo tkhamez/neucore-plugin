@@ -20,6 +20,7 @@ docker run -it --mount type=bind,source="$(pwd)",target=/app --workdir /app neuc
 
 next
 
+- Breaking: Added `GeneralInterface::command()`.
 - Added `PluginConfiguration::$active`.
 - Added `NavigationItem::$roles`.
 

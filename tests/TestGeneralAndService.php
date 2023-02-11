@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Tests;
 
+use Neucore\Plugin\Core\OutputInterface;
 use Neucore\Plugin\Data\CoreAccount;
 use Neucore\Plugin\Data\CoreCharacter;
 use Neucore\Plugin\Core\FactoryInterface;
@@ -40,6 +41,10 @@ class TestGeneralAndService implements GeneralInterface, ServiceInterface
     public function getNavigationItems(): array
     {
         return [];
+    }
+
+    public function command(array $arguments, array $options, OutputInterface $output): void
+    {
     }
 
     public function getAccounts(array $characters): array
