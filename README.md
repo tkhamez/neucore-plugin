@@ -18,7 +18,7 @@ docker run -it --mount type=bind,source="$(pwd)",target=/app --workdir /app neuc
 
 ## Changelog
 
-next
+1.0.0 - 2023-02-11
 
 - Breaking: Added `GeneralInterface::command()`.
 - Added `PluginConfiguration::$active`.
