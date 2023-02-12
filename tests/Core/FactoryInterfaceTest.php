@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Core;
 
+use Neucore\Plugin\Core\AccountInterface;
 use Neucore\Plugin\Core\EsiClientInterface;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Client\ClientInterface;
@@ -28,6 +29,7 @@ class FactoryInterfaceTest extends TestCase
     {
         $method = new \ReflectionMethod(new TestFactory(), 'createHttpClient');
         $this->assertSame(ClientInterface::class, $method->getReturnType()->getName());
+        $this->assertFalse($method->getReturnType()->allowsNull());
 
         $params = $method->getParameters();
         $this->assertSame(1, count($params));
@@ -41,6 +43,7 @@ class FactoryInterfaceTest extends TestCase
     {
         $method = new \ReflectionMethod(new TestFactory(), 'createHttpRequest');
         $this->assertSame(RequestInterface::class, $method->getReturnType()->getName());
+        $this->assertFalse($method->getReturnType()->allowsNull());
 
         $params = $method->getParameters();
         $this->assertSame(4, count($params));
@@ -57,6 +60,7 @@ class FactoryInterfaceTest extends TestCase
     {
         $method = new \ReflectionMethod(new TestFactory(), 'createSymfonyYamlParser');
         $this->assertSame(Parser::class, $method->getReturnType()->getName());
+        $this->assertFalse($method->getReturnType()->allowsNull());
 
         $params = $method->getParameters();
         $this->assertSame(0, count($params));
@@ -69,6 +73,20 @@ class FactoryInterfaceTest extends TestCase
     {
         $method = new \ReflectionMethod(new TestFactory(), 'getEsiClient');
         $this->assertSame(EsiClientInterface::class, $method->getReturnType()->getName());
+        $this->assertFalse($method->getReturnType()->allowsNull());
+
+        $params = $method->getParameters();
+        $this->assertSame(0, count($params));
+    }
+
+    /**
+     * @throws \ReflectionException
+     */
+    public function testGetAccount()
+    {
+        $method = new \ReflectionMethod(new TestFactory(), 'getAccount');
+        $this->assertSame(AccountInterface::class, $method->getReturnType()->getName());
+        $this->assertFalse($method->getReturnType()->allowsNull());
 
         $params = $method->getParameters();
         $this->assertSame(0, count($params));

@@ -22,4 +22,6 @@ interface FactoryInterface
     public function createSymfonyYamlParser(): Parser;
 
     public function getEsiClient(): EsiClientInterface;
+
+    public function getAccount(): AccountInterface;
 }

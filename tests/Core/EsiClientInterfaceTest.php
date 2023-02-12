@@ -1,5 +1,7 @@
 <?php
 
+/** @noinspection PhpUnhandledExceptionInspection */
+
 declare(strict_types=1);
 
 namespace Tests\Core;
@@ -21,34 +23,27 @@ class EsiClientInterfaceTest extends TestCase
         $this->assertSame('Unknown error.', EsiClientInterface::ERROR_UNKNOWN);
     }
 
-    /**
-     * @throws \ReflectionException
-     */
     public function testConstruct()
     {
         $this->expectExceptionMessage('Method Tests\Core\TestEsiClient::__construct() does not exist');
         new \ReflectionMethod(new TestEsiClient(), '__construct');
     }
 
-    /**
-     * @throws \ReflectionException
-     */
     public function testGetErrorLimitRemaining()
     {
         $method = new \ReflectionMethod(new TestEsiClient(), 'getErrorLimitRemaining');
         $this->assertSame('int', $method->getReturnType()->getName());
+        $this->assertFalse($method->getReturnType()->allowsNull());
 
         $params = $method->getParameters();
         $this->assertSame(0, count($params));
     }
 
-    /**
-     * @throws \ReflectionException
-     */
     public function testRequest()
     {
         $method = new \ReflectionMethod(new TestEsiClient(), 'request');
         $this->assertSame(ResponseInterface::class, $method->getReturnType()->getName());
+        $this->assertFalse($method->getReturnType()->allowsNull());
 
         $params = $method->getParameters();
         $this->assertSame(6, count($params));

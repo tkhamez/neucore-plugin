@@ -11,6 +11,15 @@ class OutputInterfaceTest extends TestCase
     /**
      * @throws \ReflectionException
      */
+    public function testConstruct()
+    {
+        $this->expectExceptionMessage('Method Tests\Core\TestOutput::__construct() does not exist');
+        new \ReflectionMethod(new TestOutput(), '__construct');
+    }
+
+    /**
+     * @throws \ReflectionException
+     */
     public function testWrite()
     {
         $method = new \ReflectionMethod(new TestOutput(), 'write');
