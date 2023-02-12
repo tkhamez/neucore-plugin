@@ -65,7 +65,7 @@ interface EsiClientInterface
      *                             Valid names can be found in Neucore at Administration -> EVE Logins.
      * @param bool $debug Set to true to disable the response cache.
      * @throws Exception Thrown if a request limit was reached, in this case the exception code will be
-     *                   the Unix timestamp to until.
+     *                   the Unix timestamp to wait until.
      *                   Thrown if the character does not exist or does not have a valid ESI token.
      *                   The exception message will always be one of the ERROR_* constants.
      * @see https://esi.evetech.net
