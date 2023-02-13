@@ -12,14 +12,6 @@ use Neucore\Plugin\Data\CoreCharacter;
 
 class TestAccount implements AccountInterface
 {
-    public function getCharacter(int $characterId): ?CoreCharacter
-    {
-    }
-
-    public function getPlayerId(int $characterId): ?int
-    {
-    }
-
     public function getAccount(int $playerId): ?CoreAccount
     {
     }

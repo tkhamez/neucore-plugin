@@ -11,10 +11,6 @@ use Neucore\Plugin\Data\CoreRole;
 
 interface AccountInterface
 {
-    public function getCharacter(int $characterId): ?CoreCharacter;
-
-    public function getPlayerId(int $characterId): ?int;
-
     public function getAccount(int $playerId): ?CoreAccount;
 
     public function getMain(int $playerId): ?CoreCharacter;

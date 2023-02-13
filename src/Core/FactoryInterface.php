@@ -24,4 +24,6 @@ interface FactoryInterface
     public function getEsiClient(): EsiClientInterface;
 
     public function getAccount(): AccountInterface;
+
+    public function getData(): DataInterface;
 }

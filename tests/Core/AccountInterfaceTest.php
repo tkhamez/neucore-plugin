@@ -12,35 +12,10 @@ use PHPUnit\Framework\TestCase;
 
 class AccountInterfaceTest extends TestCase
 {
-    /**
-     * @throws \ReflectionException
-     */
     public function testConstruct()
     {
         $this->expectExceptionMessage('Method Tests\Core\TestAccount::__construct() does not exist');
         new \ReflectionMethod(new TestAccount(), '__construct');
-    }
-
-    public function testGetCharacter()
-    {
-        $method = new \ReflectionMethod(new TestAccount(), 'getCharacter');
-        $this->assertSame(CoreCharacter::class, $method->getReturnType()->getName());
-        $this->assertTrue($method->getReturnType()->allowsNull());
-
-        $params = $method->getParameters();
-        $this->assertSame(1, count($params));
-        $this->assertSame('int', $params[0]->getType()->getName());
-    }
-
-    public function testGetPlayerId()
-    {
-        $method = new \ReflectionMethod(new TestAccount(), 'getPlayerId');
-        $this->assertSame('int', $method->getReturnType()->getName());
-        $this->assertTrue($method->getReturnType()->allowsNull());
-
-        $params = $method->getParameters();
-        $this->assertSame(1, count($params));
-        $this->assertSame('int', $params[0]->getType()->getName());
     }
 
     public function testGetAccount()

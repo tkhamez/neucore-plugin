@@ -19,7 +19,7 @@ class CoreAccountTest extends TestCase
             [new CoreCharacter(200, 1)],
             [new CoreGroup(20, 'two')],
             [new CoreGroup(30, 'three')],
-            [new CoreRole(4, 'four')]
+            [new CoreRole(4, 'four')],
         );
 
         $this->assertSame(100, $account->main->id);

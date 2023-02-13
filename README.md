@@ -20,8 +20,10 @@ docker run -it --mount type=bind,source="$(pwd)",target=/app --workdir /app neuc
 
 ### next
 
-- Added `AccountInterface`
-- Added `FactoryInterface::getAccount()`
+- Added `Core\AccountInterface`
+- Added `Core\DataInterface`
+- Added `Core\FactoryInterface::getAccount()`
+- Added `Core\FactoryInterface::getData()`
 
 ### 1.0.0 - 2023-02-11
 

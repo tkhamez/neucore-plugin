@@ -7,6 +7,7 @@ declare(strict_types=1);
 namespace Tests\Core;
 
 use Neucore\Plugin\Core\AccountInterface;
+use Neucore\Plugin\Core\DataInterface;
 use Neucore\Plugin\Core\EsiClientInterface;
 use Neucore\Plugin\Core\FactoryInterface;
 use Psr\Http\Client\ClientInterface;
@@ -35,6 +36,10 @@ class TestFactory implements FactoryInterface
     }
 
     public function getAccount(): AccountInterface
+    {
+    }
+
+    public function getData(): DataInterface
     {
     }
 }
