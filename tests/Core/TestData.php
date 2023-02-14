@@ -15,7 +15,19 @@ class TestData implements DataInterface
     {
     }
 
+    public function getCharacterTokens(int $characterId): array
+    {
+    }
+
     public function getPlayerId(int $characterId): ?int
+    {
+    }
+
+    public function getEveLoginNames(): array
+    {
+    }
+
+    public function getLoginTokens(string $eveLoginName): array
     {
     }
 }

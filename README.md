@@ -20,6 +20,8 @@ docker run -it --mount type=bind,source="$(pwd)",target=/app --workdir /app neuc
 
 ### next
 
+- Added `Data\EsiToken` class
+- Added `Data\CoreCharacter::$playerName`
 - Added `Core\AccountInterface`
 - Added `Core\DataInterface`
 - Added `Core\FactoryInterface::getAccount()`

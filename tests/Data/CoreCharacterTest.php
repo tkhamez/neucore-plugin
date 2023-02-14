@@ -24,11 +24,12 @@ class CoreCharacterTest extends TestCase
         $this->assertNull($char1->allianceName);
         $this->assertNull($char1->allianceTicker);
 
-        $char2 = new CoreCharacter(100, 10, true, 'char', 'hash', 10, 'corp', 'ticker', 1, 'alli', 'a-tick');
+        $char2 = new CoreCharacter(100, 10, true, 'char', 'p', 'hash', 10, 'corp', 'ticker', 1, 'alli', 'a-tick');
         $this->assertSame(100, $char2->id);
         $this->assertSame(10, $char2->playerId);
         $this->assertTrue($char2->main);
         $this->assertSame('char', $char2->name);
+        $this->assertSame('p', $char2->playerName);
         $this->assertSame('hash', $char2->ownerHash);
         $this->assertSame(10, $char2->corporationId);
         $this->assertSame('corp', $char2->corporationName);

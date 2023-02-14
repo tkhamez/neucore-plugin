@@ -28,6 +28,17 @@ class DataInterfaceTest extends TestCase
         $this->assertSame('int', $params[0]->getType()->getName());
     }
 
+    public function testGetCharacterTokens()
+    {
+        $method = new \ReflectionMethod(new TestData(), 'getCharacterTokens');
+        $this->assertSame('array', $method->getReturnType()->getName());
+        $this->assertFalse($method->getReturnType()->allowsNull());
+
+        $params = $method->getParameters();
+        $this->assertSame(1, count($params));
+        $this->assertSame('int', $params[0]->getType()->getName());
+    }
+
     public function testGetPlayerId()
     {
         $method = new \ReflectionMethod(new TestData(), 'getPlayerId');
@@ -37,5 +48,26 @@ class DataInterfaceTest extends TestCase
         $params = $method->getParameters();
         $this->assertSame(1, count($params));
         $this->assertSame('int', $params[0]->getType()->getName());
+    }
+
+    public function testGetEveLoginNames()
+    {
+        $method = new \ReflectionMethod(new TestData(), 'getEveLoginNames');
+        $this->assertSame('array', $method->getReturnType()->getName());
+        $this->assertFalse($method->getReturnType()->allowsNull());
+
+        $params = $method->getParameters();
+        $this->assertSame(0, count($params));
+    }
+
+    public function testGetLoginTokens()
+    {
+        $method = new \ReflectionMethod(new TestData(), 'getLoginTokens');
+        $this->assertSame('array', $method->getReturnType()->getName());
+        $this->assertFalse($method->getReturnType()->allowsNull());
+
+        $params = $method->getParameters();
+        $this->assertSame(1, count($params));
+        $this->assertSame('string', $params[0]->getType()->getName());
     }
 }
