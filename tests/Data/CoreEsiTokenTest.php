@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace Tests\Data;
 
 use Neucore\Plugin\Data\CoreCharacter;
-use Neucore\Plugin\Data\EsiToken;
+use Neucore\Plugin\Data\CoreEsiToken;
 use PHPUnit\Framework\TestCase;
 
-class EsiTokenTest extends TestCase
+class CoreEsiTokenTest extends TestCase
 {
     public function testConstruct()
     {
-        $token1 = new EsiToken(
+        $token1 = new CoreEsiToken(
             new CoreCharacter(100200300, 7),
             'test',
             ['esi-scope1', 'esi-scope2'],
@@ -27,7 +27,7 @@ class EsiTokenTest extends TestCase
         $this->assertNull($token1->hasRoles);
         $this->assertNull($token1->lastChecked);
 
-        $token2 = new EsiToken(
+        $token2 = new CoreEsiToken(
             new CoreCharacter(100200300, 7),
             'test',
             ['esi-scope1', 'esi-scope2'],

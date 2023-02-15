@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Neucore\Plugin\Data;
 
-class EsiToken
+class CoreEsiToken
 {
     public function __construct(
         public CoreCharacter $character,

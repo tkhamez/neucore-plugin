@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Neucore\Plugin\Core;
 
 use Neucore\Plugin\Data\CoreCharacter;
-use Neucore\Plugin\Data\EsiToken;
+use Neucore\Plugin\Data\CoreEsiToken;
 
 interface DataInterface
 {
@@ -14,7 +14,7 @@ interface DataInterface
     /**
      * Returns all ESI tokens from the character.
      *
-     * @return EsiToken[]
+     * @return CoreEsiToken[]
      */
     public function getCharacterTokens(int $characterId): array;
 
@@ -28,7 +28,7 @@ interface DataInterface
     /**
      * Returns all ESI tokens for an EVE login, except for the default login.
      *
-     * @return EsiToken[]
+     * @return CoreEsiToken[]
      */
     public function getLoginTokens(string $eveLoginName): array;
 }
