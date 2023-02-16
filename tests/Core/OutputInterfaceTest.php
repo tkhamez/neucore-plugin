@@ -4,25 +4,20 @@ declare(strict_types=1);
 
 namespace Tests\Core;
 
+use Neucore\Plugin\Core\OutputInterface;
 use PHPUnit\Framework\TestCase;
 
 class OutputInterfaceTest extends TestCase
 {
-    /**
-     * @throws \ReflectionException
-     */
     public function testConstruct()
     {
-        $this->expectExceptionMessage('Method Tests\Core\TestOutput::__construct() does not exist');
-        new \ReflectionMethod(new TestOutput(), '__construct');
+        $this->expectExceptionMessage('Method Neucore\Plugin\Core\OutputInterface::__construct() does not exist');
+        new \ReflectionMethod(OutputInterface::class, '__construct');
     }
 
-    /**
-     * @throws \ReflectionException
-     */
     public function testWrite()
     {
-        $method = new \ReflectionMethod(new TestOutput(), 'write');
+        $method = new \ReflectionMethod(OutputInterface::class, 'write');
         $this->assertSame('void', $method->getReturnType()->getName());
 
         $params = $method->getParameters();
@@ -30,12 +25,9 @@ class OutputInterfaceTest extends TestCase
         $this->assertSame('string', $params[0]->getType()->getName());
     }
 
-    /**
-     * @throws \ReflectionException
-     */
     public function testWriteLine()
     {
-        $method = new \ReflectionMethod(new TestOutput(), 'writeLine');
+        $method = new \ReflectionMethod(OutputInterface::class, 'writeLine');
         $this->assertSame('void', $method->getReturnType()->getName());
 
         $params = $method->getParameters();

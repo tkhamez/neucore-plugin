@@ -4,7 +4,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Core;
+namespace Tests;
 
 use Neucore\Plugin\Core\AccountInterface;
 use Neucore\Plugin\Core\DataInterface;

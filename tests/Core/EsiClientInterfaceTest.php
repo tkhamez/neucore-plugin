@@ -1,7 +1,5 @@
 <?php
 
-/** @noinspection PhpUnhandledExceptionInspection */
-
 declare(strict_types=1);
 
 namespace Tests\Core;
@@ -25,13 +23,13 @@ class EsiClientInterfaceTest extends TestCase
 
     public function testConstruct()
     {
-        $this->expectExceptionMessage('Method Tests\Core\TestEsiClient::__construct() does not exist');
-        new \ReflectionMethod(new TestEsiClient(), '__construct');
+        $this->expectExceptionMessage('Method Neucore\Plugin\Core\EsiClientInterface::__construct() does not exist');
+        new \ReflectionMethod(EsiClientInterface::class, '__construct');
     }
 
     public function testGetErrorLimitRemaining()
     {
-        $method = new \ReflectionMethod(new TestEsiClient(), 'getErrorLimitRemaining');
+        $method = new \ReflectionMethod(EsiClientInterface::class, 'getErrorLimitRemaining');
         $this->assertSame('int', $method->getReturnType()->getName());
         $this->assertFalse($method->getReturnType()->allowsNull());
 
@@ -41,7 +39,7 @@ class EsiClientInterfaceTest extends TestCase
 
     public function testRequest()
     {
-        $method = new \ReflectionMethod(new TestEsiClient(), 'request');
+        $method = new \ReflectionMethod(EsiClientInterface::class, 'request');
         $this->assertSame(ResponseInterface::class, $method->getReturnType()->getName());
         $this->assertFalse($method->getReturnType()->allowsNull());
 

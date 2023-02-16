@@ -11,7 +11,6 @@ use Neucore\Plugin\Exception;
 use Neucore\Plugin\PluginInterface;
 use Neucore\Plugin\ServiceInterface;
 use PHPUnit\Framework\TestCase;
-use Tests\Core\TestFactory;
 
 class ServiceInterfaceTest extends TestCase
 {

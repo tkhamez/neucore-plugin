@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Core;
+namespace Tests;
 
 use Neucore\Plugin\Core\OutputInterface;
 

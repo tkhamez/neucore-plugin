@@ -1,7 +1,5 @@
 <?php
 
-/** @noinspection PhpUnhandledExceptionInspection */
-
 declare(strict_types=1);
 
 namespace Tests\Core;
@@ -9,6 +7,7 @@ namespace Tests\Core;
 use Neucore\Plugin\Core\AccountInterface;
 use Neucore\Plugin\Core\DataInterface;
 use Neucore\Plugin\Core\EsiClientInterface;
+use Neucore\Plugin\Core\FactoryInterface;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
@@ -18,13 +17,13 @@ class FactoryInterfaceTest extends TestCase
 {
     public function testConstruct()
     {
-        $this->expectExceptionMessage('Method Tests\Core\TestFactory::__construct() does not exist');
-        new \ReflectionMethod(new TestFactory(), '__construct');
+        $this->expectExceptionMessage('Method Neucore\Plugin\Core\FactoryInterface::__construct() does not exist');
+        new \ReflectionMethod(FactoryInterface::class, '__construct');
     }
 
     public function testCreateHttpClient()
     {
-        $method = new \ReflectionMethod(new TestFactory(), 'createHttpClient');
+        $method = new \ReflectionMethod(FactoryInterface::class, 'createHttpClient');
         $this->assertSame(ClientInterface::class, $method->getReturnType()->getName());
         $this->assertFalse($method->getReturnType()->allowsNull());
 
@@ -35,7 +34,7 @@ class FactoryInterfaceTest extends TestCase
 
     public function testCreateHttpRequest()
     {
-        $method = new \ReflectionMethod(new TestFactory(), 'createHttpRequest');
+        $method = new \ReflectionMethod(FactoryInterface::class, 'createHttpRequest');
         $this->assertSame(RequestInterface::class, $method->getReturnType()->getName());
         $this->assertFalse($method->getReturnType()->allowsNull());
 
@@ -49,7 +48,7 @@ class FactoryInterfaceTest extends TestCase
 
     public function testCreateSymfonyYamlParser()
     {
-        $method = new \ReflectionMethod(new TestFactory(), 'createSymfonyYamlParser');
+        $method = new \ReflectionMethod(FactoryInterface::class, 'createSymfonyYamlParser');
         $this->assertSame(Parser::class, $method->getReturnType()->getName());
         $this->assertFalse($method->getReturnType()->allowsNull());
 
@@ -59,7 +58,7 @@ class FactoryInterfaceTest extends TestCase
 
     public function testGetEsiClient()
     {
-        $method = new \ReflectionMethod(new TestFactory(), 'getEsiClient');
+        $method = new \ReflectionMethod(FactoryInterface::class, 'getEsiClient');
         $this->assertSame(EsiClientInterface::class, $method->getReturnType()->getName());
         $this->assertFalse($method->getReturnType()->allowsNull());
 
@@ -69,7 +68,7 @@ class FactoryInterfaceTest extends TestCase
 
     public function testGetAccount()
     {
-        $method = new \ReflectionMethod(new TestFactory(), 'getAccount');
+        $method = new \ReflectionMethod(FactoryInterface::class, 'getAccount');
         $this->assertSame(AccountInterface::class, $method->getReturnType()->getName());
         $this->assertFalse($method->getReturnType()->allowsNull());
 
@@ -79,7 +78,7 @@ class FactoryInterfaceTest extends TestCase
 
     public function testGetData()
     {
-        $method = new \ReflectionMethod(new TestFactory(), 'getData');
+        $method = new \ReflectionMethod(FactoryInterface::class, 'getData');
         $this->assertSame(DataInterface::class, $method->getReturnType()->getName());
         $this->assertFalse($method->getReturnType()->allowsNull());
 

@@ -1,14 +1,22 @@
 <?php
 
+/** @noinspection PhpUnused */
+
 declare(strict_types=1);
 
 namespace Neucore\Plugin\Core;
 
 use Neucore\Plugin\Data\CoreCharacter;
 use Neucore\Plugin\Data\CoreEsiToken;
+use Neucore\Plugin\Data\CoreGroup;
 
 interface DataInterface
 {
+    /**
+     * @return CoreCharacter[]
+     */
+    public function getCharactersByCorporation(int $corporationId): array;
+
     public function getCharacter(int $characterId): ?CoreCharacter;
 
     /**
@@ -31,4 +39,9 @@ interface DataInterface
      * @return CoreEsiToken[]
      */
     public function getLoginTokens(string $eveLoginName): array;
+
+    /**
+     * @return CoreGroup[]
+     */
+    public function getGroups(): array;
 }

@@ -10,8 +10,6 @@ use Neucore\Plugin\Exception;
 use Neucore\Plugin\GeneralInterface;
 use Neucore\Plugin\PluginInterface;
 use PHPUnit\Framework\TestCase;
-use Tests\Core\TestFactory;
-use Tests\Core\TestOutput;
 
 class GeneralInterfaceTest extends TestCase
 {

@@ -13,7 +13,6 @@ use Neucore\Plugin\PluginInterface;
 use Neucore\Plugin\ServiceInterface;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
-use Tests\Core\TestFactory;
 
 class GeneralAndServiceInterfaceTest extends TestCase
 {
