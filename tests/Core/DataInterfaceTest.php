@@ -16,6 +16,17 @@ class DataInterfaceTest extends TestCase
         new \ReflectionMethod(DataInterface::class, '__construct');
     }
 
+    public function testGetCharacterIdsByCorporation()
+    {
+        $method = new \ReflectionMethod(DataInterface::class, 'getCharacterIdsByCorporation');
+        $this->assertSame('array', $method->getReturnType()->getName());
+        $this->assertFalse($method->getReturnType()->allowsNull());
+
+        $params = $method->getParameters();
+        $this->assertSame(1, count($params));
+        $this->assertSame('int', $params[0]->getType()->getName());
+    }
+
     public function testGetCharactersByCorporation()
     {
         $method = new \ReflectionMethod(DataInterface::class, 'getCharactersByCorporation');

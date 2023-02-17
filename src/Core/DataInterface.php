@@ -13,6 +13,11 @@ use Neucore\Plugin\Data\CoreGroup;
 interface DataInterface
 {
     /**
+     * @return int[]
+     */
+    public function getCharacterIdsByCorporation(int $corporationId): array;
+
+    /**
      * @return CoreCharacter[] The corporation and alliance properties of the object will be null.
      */
     public function getCharactersByCorporation(int $corporationId): array;
