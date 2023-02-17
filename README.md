@@ -18,10 +18,15 @@ docker run -it --mount type=bind,source="$(pwd)",target=/app --workdir /app neuc
 
 ## Changelog
 
-### next
+### 2.0.0 (unreleased)
 
-- Added `Data\CoreEsiTokenTest` class
+Breaking changes:
+- All properties of `Data\CoreCharacter` can now be null except for the new `$playerId` and `$playerName`.
+
+Other changes:
+- Added `Data\CoreEsiToken` class
 - Added `Data\CoreAccount::$playerId`
+- Added `Data\CoreAccount::$playerName`
 - Added `Data\CoreCharacter::$playerName`
 - Added `Core\AccountInterface`
 - Added `Core\DataInterface`

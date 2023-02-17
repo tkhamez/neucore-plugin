@@ -58,7 +58,7 @@ class GeneralAndServiceInterfaceTest extends TestCase
                 'name',
                 new TestRequest(),
                 new TestResponse(),
-                new CoreAccount(1, new CoreCharacter(100, 1), [], [], [], []),
+                new CoreAccount(1, 'p', new CoreCharacter(100, 1), [], [], [], []),
             )
         );
     }

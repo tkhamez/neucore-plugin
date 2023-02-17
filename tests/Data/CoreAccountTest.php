@@ -12,11 +12,24 @@ use PHPUnit\Framework\TestCase;
 
 class CoreAccountTest extends TestCase
 {
+    public function testConstructMinimum()
+    {
+        $account = new CoreAccount(1, 'p');
+        $this->assertSame(1, $account->playerId);
+        $this->assertSame('p', $account->playerName);
+        $this->assertNull($account->main);
+        $this->assertNull($account->characters);
+        $this->assertNull($account->memberGroups);
+        $this->assertNull($account->managerGroups);
+        $this->assertNull($account->roles);
+    }
+
     public function testConstruct()
     {
         $playerId = 1;
         $account = new CoreAccount(
             $playerId,
+            'player name',
             new CoreCharacter(100, $playerId),
             [new CoreCharacter(200, $playerId)],
             [new CoreGroup(20, 'two')],
@@ -25,6 +38,7 @@ class CoreAccountTest extends TestCase
         );
 
         $this->assertSame(1, $account->playerId);
+        $this->assertSame('player name', $account->playerName);
 
         $this->assertSame(100, $account->main->id);
         $this->assertSame(1, $account->main->playerId);
@@ -46,7 +60,7 @@ class CoreAccountTest extends TestCase
 
     public function testGetMemberGroups()
     {
-        $account = new CoreAccount(1, new CoreCharacter(100, 1), [], [new CoreGroup(20, 'two')], [], []);
+        $account = new CoreAccount(1, 'p', new CoreCharacter(100, 1), [], [new CoreGroup(20, 'two')], [], []);
 
         $this->assertSame(1, count($account->getMemberGroups()));
 

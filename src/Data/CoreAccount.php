@@ -15,38 +15,40 @@ class CoreAccount
     public function __construct(
         public int $playerId,
 
+        public string $playerName,
+
         /**
          * The main character of the logged in player.
          */
-        public CoreCharacter $main,
+        public ?CoreCharacter $main = null,
 
         /**
          * All characters of the player.
          *
          * @var CoreCharacter[]
          */
-        public array $characters,
+        public ?array $characters = null,
 
         /**
          * All groups of which the player is a member.
          *
          * @var CoreGroup[]
          */
-        public array $memberGroups,
+        public ?array $memberGroups = null,
 
         /**
          * All groups of which the player is a manager.
          *
          * @var CoreGroup[]
          */
-        public array $managerGroups,
+        public ?array $managerGroups = null,
 
         /**
          * All roles of the player.
          *
          * @var CoreRole[]
          */
-        public array $roles,
+        public ?array $roles = null,
     ) {
     }
 
