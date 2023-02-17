@@ -74,29 +74,33 @@ interface ServiceInterface extends PluginInterface
     /**
      * Updates account information.
      *
-     * This is called when the user clicks the update button and by the "update-service-accounts" command.
-     * This is not called if there is no account for the character.
+     * This is called when a user manually updates the service account, when accounts are merged by Neucore and
+     * by the "update-service-accounts" command for all characters returned by ServiceInterface->getAllAccounts().
      *
      * If the character does not exist on Neucore, this will still be called when updating all accounts,
      * in which case the CoreCharacter $id property will be the character ID, the $playerId will be 0 and all other
      * properties will be null.
      *
+     * This is not called if there is no account for the character.
+     *
      * @param CoreCharacter $character
      * @param CoreGroup[] $groups
      * @param CoreCharacter|null $mainCharacter
-     * @throws Exception On error. If the exceptions contains a message it will be shown to the user.
+     * @throws Exception On error. If the exception contains a message it will be shown to the user.
      */
     public function updateAccount(CoreCharacter $character, array $groups, ?CoreCharacter $mainCharacter): void;
 
     /**
      * Updates account information.
      *
-     * This is called by the "update-service-accounts" command.
-     * This is not called if there is no account for the player.
+     * This is called by the "update-service-accounts" command for all accounts return by
+     * ServiceInterface->getAllPlayerAccounts().
      *
-     * This will still be called if there is no main character on the player account, in which case the
+     * This function is called even if there is no main character on the player account. In this case the
      * CoreCharacter $id property will be 0, the $playerId will be the player ID and all other properties
      * will be null.
+     *
+     * This is not called if there is no account for the player.
      *
      * @param CoreGroup[] $groups
      * @throws Exception On error

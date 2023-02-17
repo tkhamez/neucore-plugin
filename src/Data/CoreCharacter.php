@@ -15,8 +15,6 @@ class CoreCharacter
 
         /**
          * Neucore player (account) ID.
-         *
-         * Will be 0 if the character does not exist in the database.
          */
         public int $playerId,
 

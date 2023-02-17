@@ -13,7 +13,7 @@ use Neucore\Plugin\Data\CoreGroup;
 interface DataInterface
 {
     /**
-     * @return CoreCharacter[]
+     * @return CoreCharacter[] The corporation and alliance properties of the object will be null.
      */
     public function getCharactersByCorporation(int $corporationId): array;
 
@@ -22,7 +22,7 @@ interface DataInterface
     /**
      * Returns all ESI tokens from the character.
      *
-     * @return CoreEsiToken[]
+     * @return CoreEsiToken[] The corporation and alliance properties of the CoreCharacter object will be null.
      */
     public function getCharacterTokens(int $characterId): array;
 
