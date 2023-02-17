@@ -21,7 +21,7 @@ class AccountInterfaceTest extends TestCase
     {
         $method = new \ReflectionMethod(AccountInterface::class, 'getAccountsByGroup');
         $this->assertSame('array', $method->getReturnType()->getName());
-        $this->assertFalse($method->getReturnType()->allowsNull());
+        $this->assertTrue($method->getReturnType()->allowsNull());
 
         $params = $method->getParameters();
         $this->assertSame(1, count($params));
@@ -32,7 +32,7 @@ class AccountInterfaceTest extends TestCase
     {
         $method = new \ReflectionMethod(AccountInterface::class, 'getAccountsByGroupManager');
         $this->assertSame('array', $method->getReturnType()->getName());
-        $this->assertFalse($method->getReturnType()->allowsNull());
+        $this->assertTrue($method->getReturnType()->allowsNull());
 
         $params = $method->getParameters();
         $this->assertSame(1, count($params));
@@ -43,7 +43,7 @@ class AccountInterfaceTest extends TestCase
     {
         $method = new \ReflectionMethod(AccountInterface::class, 'getAccountsByRole');
         $this->assertSame('array', $method->getReturnType()->getName());
-        $this->assertFalse($method->getReturnType()->allowsNull());
+        $this->assertTrue($method->getReturnType()->allowsNull());
 
         $params = $method->getParameters();
         $this->assertSame(1, count($params));
@@ -76,7 +76,7 @@ class AccountInterfaceTest extends TestCase
     {
         $method = new \ReflectionMethod(AccountInterface::class, 'getCharacters');
         $this->assertSame('array', $method->getReturnType()->getName());
-        $this->assertFalse($method->getReturnType()->allowsNull());
+        $this->assertTrue($method->getReturnType()->allowsNull());
 
         $params = $method->getParameters();
         $this->assertSame(1, count($params));
@@ -87,7 +87,7 @@ class AccountInterfaceTest extends TestCase
     {
         $method = new \ReflectionMethod(AccountInterface::class, 'getMemberGroups');
         $this->assertSame('array', $method->getReturnType()->getName());
-        $this->assertFalse($method->getReturnType()->allowsNull());
+        $this->assertTrue($method->getReturnType()->allowsNull());
 
         $params = $method->getParameters();
         $this->assertSame(1, count($params));
@@ -98,7 +98,7 @@ class AccountInterfaceTest extends TestCase
     {
         $method = new \ReflectionMethod(AccountInterface::class, 'groupsDeactivated');
         $this->assertSame('bool', $method->getReturnType()->getName());
-        $this->assertFalse($method->getReturnType()->allowsNull());
+        $this->assertTrue($method->getReturnType()->allowsNull());
 
         $params = $method->getParameters();
         $this->assertSame(1, count($params));
@@ -109,7 +109,7 @@ class AccountInterfaceTest extends TestCase
     {
         $method = new \ReflectionMethod(AccountInterface::class, 'getManagerGroups');
         $this->assertSame('array', $method->getReturnType()->getName());
-        $this->assertFalse($method->getReturnType()->allowsNull());
+        $this->assertTrue($method->getReturnType()->allowsNull());
 
         $params = $method->getParameters();
         $this->assertSame(1, count($params));
@@ -120,7 +120,7 @@ class AccountInterfaceTest extends TestCase
     {
         $method = new \ReflectionMethod(AccountInterface::class, 'getRoles');
         $this->assertSame('array', $method->getReturnType()->getName());
-        $this->assertFalse($method->getReturnType()->allowsNull());
+        $this->assertTrue($method->getReturnType()->allowsNull());
 
         $params = $method->getParameters();
         $this->assertSame(1, count($params));

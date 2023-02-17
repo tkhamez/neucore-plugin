@@ -10,26 +10,31 @@ use Neucore\Plugin\Data\CoreCharacter;
 use Neucore\Plugin\Data\CoreEsiToken;
 use Neucore\Plugin\Data\CoreGroup;
 
+/**
+ * Provides various data.
+ *
+ * Methods with a parameter return null if it's invalid (e.g. corporation does not exist).
+ */
 interface DataInterface
 {
     /**
-     * @return int[]
+     * @return int[]|null
      */
-    public function getCharacterIdsByCorporation(int $corporationId): array;
+    public function getCharacterIdsByCorporation(int $corporationId): ?array;
 
     /**
-     * @return CoreCharacter[] The corporation and alliance properties of the object will be null.
+     * @return CoreCharacter[]|null The corporation and alliance properties of the object will be null.
      */
-    public function getCharactersByCorporation(int $corporationId): array;
+    public function getCharactersByCorporation(int $corporationId): ?array;
 
     public function getCharacter(int $characterId): ?CoreCharacter;
 
     /**
      * Returns all ESI tokens from the character.
      *
-     * @return CoreEsiToken[] The corporation and alliance properties of the CoreCharacter object will be null.
+     * @return CoreEsiToken[]|null The corporation and alliance properties of the CoreCharacter object will be null.
      */
-    public function getCharacterTokens(int $characterId): array;
+    public function getCharacterTokens(int $characterId): ?array;
 
     public function getPlayerId(int $characterId): ?int;
 
@@ -41,9 +46,9 @@ interface DataInterface
     /**
      * Returns all ESI tokens for an EVE login, except for the default login.
      *
-     * @return CoreEsiToken[]
+     * @return CoreEsiToken[]|null
      */
-    public function getLoginTokens(string $eveLoginName): array;
+    public function getLoginTokens(string $eveLoginName): ?array;
 
     /**
      * @return CoreGroup[]

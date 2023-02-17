@@ -20,7 +20,7 @@ class DataInterfaceTest extends TestCase
     {
         $method = new \ReflectionMethod(DataInterface::class, 'getCharacterIdsByCorporation');
         $this->assertSame('array', $method->getReturnType()->getName());
-        $this->assertFalse($method->getReturnType()->allowsNull());
+        $this->assertTrue($method->getReturnType()->allowsNull());
 
         $params = $method->getParameters();
         $this->assertSame(1, count($params));
@@ -31,7 +31,7 @@ class DataInterfaceTest extends TestCase
     {
         $method = new \ReflectionMethod(DataInterface::class, 'getCharactersByCorporation');
         $this->assertSame('array', $method->getReturnType()->getName());
-        $this->assertFalse($method->getReturnType()->allowsNull());
+        $this->assertTrue($method->getReturnType()->allowsNull());
 
         $params = $method->getParameters();
         $this->assertSame(1, count($params));
@@ -53,7 +53,7 @@ class DataInterfaceTest extends TestCase
     {
         $method = new \ReflectionMethod(DataInterface::class, 'getCharacterTokens');
         $this->assertSame('array', $method->getReturnType()->getName());
-        $this->assertFalse($method->getReturnType()->allowsNull());
+        $this->assertTrue($method->getReturnType()->allowsNull());
 
         $params = $method->getParameters();
         $this->assertSame(1, count($params));
@@ -85,7 +85,7 @@ class DataInterfaceTest extends TestCase
     {
         $method = new \ReflectionMethod(DataInterface::class, 'getLoginTokens');
         $this->assertSame('array', $method->getReturnType()->getName());
-        $this->assertFalse($method->getReturnType()->allowsNull());
+        $this->assertTrue($method->getReturnType()->allowsNull());
 
         $params = $method->getParameters();
         $this->assertSame(1, count($params));
