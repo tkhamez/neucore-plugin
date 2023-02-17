@@ -35,8 +35,7 @@ class CoreRoleTest extends TestCase
 
     public function testConstruct()
     {
-        $group = new CoreRole(1, 'n');
-        $this->assertSame(1, $group->identifier);
+        $group = new CoreRole('n');
         $this->assertSame('n', $group->name);
     }
 }

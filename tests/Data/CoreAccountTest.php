@@ -34,7 +34,7 @@ class CoreAccountTest extends TestCase
             [new CoreCharacter(200, $playerId)],
             [new CoreGroup(20, 'two')],
             [new CoreGroup(30, 'three')],
-            [new CoreRole(4, 'four')],
+            [new CoreRole('four')],
         );
 
         $this->assertSame(1, $account->playerId);
@@ -54,7 +54,6 @@ class CoreAccountTest extends TestCase
         $this->assertSame(30, $account->managerGroups[0]->identifier);
         $this->assertSame('three', $account->managerGroups[0]->name);
 
-        $this->assertSame(4, $account->roles[0]->identifier);
         $this->assertSame('four', $account->roles[0]->name);
     }
 

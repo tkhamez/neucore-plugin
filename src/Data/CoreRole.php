@@ -27,19 +27,7 @@ class CoreRole
     public const WATCHLIST = 'watchlist';
     public const WATCHLIST_MANAGER = 'watchlist-manager';
 
-    /**
-     * Neucore role ID.
-     */
-    public int $identifier;
-
-    /**
-     * Neucore role name.
-     */
-    public string $name;
-
-    public function __construct(int $identifier, string $name)
+    public function __construct(public string $name)
     {
-        $this->identifier = $identifier;
-        $this->name = $name;
     }
 }
