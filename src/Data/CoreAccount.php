@@ -13,6 +13,8 @@ class CoreAccount
     public bool $groupsDeactivated = false;
 
     public function __construct(
+        public int $playerId,
+
         /**
          * The main character of the logged in player.
          */

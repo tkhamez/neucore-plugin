@@ -14,13 +14,17 @@ class CoreAccountTest extends TestCase
 {
     public function testConstruct()
     {
+        $playerId = 1;
         $account = new CoreAccount(
-            new CoreCharacter(100, 1),
-            [new CoreCharacter(200, 1)],
+            $playerId,
+            new CoreCharacter(100, $playerId),
+            [new CoreCharacter(200, $playerId)],
             [new CoreGroup(20, 'two')],
             [new CoreGroup(30, 'three')],
             [new CoreRole(4, 'four')],
         );
+
+        $this->assertSame(1, $account->playerId);
 
         $this->assertSame(100, $account->main->id);
         $this->assertSame(1, $account->main->playerId);
@@ -42,7 +46,7 @@ class CoreAccountTest extends TestCase
 
     public function testGetMemberGroups()
     {
-        $account = new CoreAccount(new CoreCharacter(100, 1), [], [new CoreGroup(20, 'two')], [], []);
+        $account = new CoreAccount(1, new CoreCharacter(100, 1), [], [new CoreGroup(20, 'two')], [], []);
 
         $this->assertSame(1, count($account->getMemberGroups()));
 
