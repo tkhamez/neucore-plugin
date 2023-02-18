@@ -54,4 +54,14 @@ interface DataInterface
      * @return CoreGroup[]
      */
     public function getGroups(): array;
+
+    /**
+     * @return CoreGroup[]|null
+     */
+    public function getCorporationGroups(int $corporationId): ?array;
+
+    /**
+     * @return CoreGroup[]|null
+     */
+    public function getAllianceGroups(int $allianceId): ?array;
 }
