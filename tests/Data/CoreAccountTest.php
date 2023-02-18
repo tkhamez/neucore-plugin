@@ -59,8 +59,9 @@ class CoreAccountTest extends TestCase
 
     public function testGetMemberGroups()
     {
-        $account = new CoreAccount(1, 'p', new CoreCharacter(100, 1), [], [new CoreGroup(20, 'two')], [], []);
+        $this->assertNull((new CoreAccount(1, 'p'))->getMemberGroups());
 
+        $account = new CoreAccount(1, 'p', new CoreCharacter(100, 1), [], [new CoreGroup(20, 'two')], [], []);
         $this->assertSame(1, count($account->getMemberGroups()));
 
         $account->groupsDeactivated = true;

@@ -55,10 +55,13 @@ class CoreAccount
     /**
      * Returns groups if they are not deactivated.
      *
-     * @return CoreGroup[]
+     * @return CoreGroup[]|null
      */
-    public function getMemberGroups(): array
+    public function getMemberGroups(): ?array
     {
+        if (!is_array($this->memberGroups)) {
+            return null;
+        }
         return $this->groupsDeactivated ? [] : $this->memberGroups;
     }
 }
