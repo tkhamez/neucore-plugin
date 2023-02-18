@@ -31,6 +31,11 @@ class CoreEsiToken
         public ?bool $valid = null,
 
         /**
+         * When the "valid" status last changed.
+         */
+        public ?\DateTime $validStatusChanged = null,
+
+        /**
          * If the character has the required in-game roles.
          */
         public ?bool $hasRoles = null,

@@ -33,6 +33,7 @@ class CoreEsiTokenTest extends TestCase
             ['esi-scope1', 'esi-scope2'],
             ['role1', 'role2'],
             true,
+            new \DateTime(),
             false,
             new \DateTime(),
         );
@@ -42,6 +43,7 @@ class CoreEsiTokenTest extends TestCase
         $this->assertSame(['esi-scope1', 'esi-scope2'], $token2->esiScopes);
         $this->assertSame(['role1', 'role2'], $token2->eveRoles);
         $this->assertTrue($token2->valid);
+        $this->assertInstanceOf(\DateTime::class, $token2->validStatusChanged);
         $this->assertFalse($token2->hasRoles);
         $this->assertInstanceOf(\DateTime::class, $token2->lastChecked);
     }
