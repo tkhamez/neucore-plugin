@@ -18,7 +18,7 @@ docker run -it --mount type=bind,source="$(pwd)",target=/app --workdir /app neuc
 
 ## Changelog
 
-### 2.0.0 (unreleased)
+### 2.0.0 - 2023-02-18
 
 Breaking changes:
 
