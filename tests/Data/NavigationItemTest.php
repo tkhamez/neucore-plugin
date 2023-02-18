@@ -13,6 +13,7 @@ class NavigationItemTest extends TestCase
     public function testConstants()
     {
         $this->assertSame('root', NavigationItem::PARENT_ROOT);
+        $this->assertSame('services', NavigationItem::PARENT_SERVICE);
         $this->assertSame('management', NavigationItem::PARENT_MANAGEMENT);
         $this->assertSame('administration', NavigationItem::PARENT_ADMINISTRATION);
         $this->assertSame('member_data', NavigationItem::PARENT_MEMBER_DATA);

@@ -8,6 +8,8 @@ class NavigationItem implements \JsonSerializable
 {
     public const PARENT_ROOT = 'root';
 
+    public const PARENT_SERVICE = 'services';
+
     public const PARENT_MANAGEMENT = 'management';
 
     public const PARENT_ADMINISTRATION = 'administration';

@@ -35,6 +35,7 @@ Other changes:
 - Added `Core\DataInterface`
 - Added `Core\FactoryInterface::getAccount()`
 - Added `Core\FactoryInterface::getData()`
+- Menu entries are now also allowed in the "Services" menu.
 
 ### 1.0.0 - 2023-02-11
 
