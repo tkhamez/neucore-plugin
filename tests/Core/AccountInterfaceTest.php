@@ -126,4 +126,26 @@ class AccountInterfaceTest extends TestCase
         $this->assertSame(1, count($params));
         $this->assertSame('int', $params[0]->getType()->getName());
     }
+
+    public function testGetRemovedCharacters()
+    {
+        $method = new \ReflectionMethod(AccountInterface::class, 'getRemovedCharacters');
+        $this->assertSame('array', $method->getReturnType()->getName());
+        $this->assertTrue($method->getReturnType()->allowsNull());
+
+        $params = $method->getParameters();
+        $this->assertSame(1, count($params));
+        $this->assertSame('int', $params[0]->getType()->getName());
+    }
+
+    public function testGetIncomingCharacters()
+    {
+        $method = new \ReflectionMethod(AccountInterface::class, 'getIncomingCharacters');
+        $this->assertSame('array', $method->getReturnType()->getName());
+        $this->assertTrue($method->getReturnType()->allowsNull());
+
+        $params = $method->getParameters();
+        $this->assertSame(1, count($params));
+        $this->assertSame('int', $params[0]->getType()->getName());
+    }
 }

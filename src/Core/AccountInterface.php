@@ -9,6 +9,7 @@ namespace Neucore\Plugin\Core;
 use Neucore\Plugin\Data\CoreAccount;
 use Neucore\Plugin\Data\CoreCharacter;
 use Neucore\Plugin\Data\CoreGroup;
+use Neucore\Plugin\Data\CoreMovedCharacter;
 use Neucore\Plugin\Data\CoreRole;
 
 /**
@@ -64,4 +65,18 @@ interface AccountInterface
      * @return CoreRole[]|null
      */
     public function getRoles(int $playerId): ?array;
+
+    /**
+     * Returns characters that were removed from the account.
+     *
+     * @return CoreMovedCharacter[]|null
+     */
+    public function getRemovedCharacters(int $playerId): ?array;
+
+    /**
+     * Returns characters that were moved from another account to this account.
+     *
+     * @return CoreMovedCharacter[]|null
+     */
+    public function getIncomingCharacters(int $playerId): ?array;
 }
