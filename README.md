@@ -28,6 +28,7 @@ Breaking changes:
 Other changes:
 
 - Added `Data\CoreEsiToken` class
+- Added `Data\CoreMemberTracking` class
 - Added `Data\CoreMovedCharacter` class
 - Added `Data\CoreAccount::$playerId`
 - Added `Data\CoreAccount::$playerName`

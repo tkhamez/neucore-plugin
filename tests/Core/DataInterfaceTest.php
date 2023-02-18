@@ -38,6 +38,17 @@ class DataInterfaceTest extends TestCase
         $this->assertSame('int', $params[0]->getType()->getName());
     }
 
+    public function testGetMemberTracking()
+    {
+        $method = new \ReflectionMethod(DataInterface::class, 'getMemberTracking');
+        $this->assertSame('array', $method->getReturnType()->getName());
+        $this->assertTrue($method->getReturnType()->allowsNull());
+
+        $params = $method->getParameters();
+        $this->assertSame(1, count($params));
+        $this->assertSame('int', $params[0]->getType()->getName());
+    }
+
     public function testGetCharacter()
     {
         $method = new \ReflectionMethod(DataInterface::class, 'getCharacter');

@@ -9,6 +9,7 @@ namespace Neucore\Plugin\Core;
 use Neucore\Plugin\Data\CoreCharacter;
 use Neucore\Plugin\Data\CoreEsiToken;
 use Neucore\Plugin\Data\CoreGroup;
+use Neucore\Plugin\Data\CoreMemberTracking;
 
 /**
  * Provides various data.
@@ -26,6 +27,11 @@ interface DataInterface
      * @return CoreCharacter[]|null The corporation and alliance properties of the object will be null.
      */
     public function getCharactersByCorporation(int $corporationId): ?array;
+
+    /**
+     * @return CoreMemberTracking[]|null
+     */
+    public function getMemberTracking(int $corporationId): ?array;
 
     public function getCharacter(int $characterId): ?CoreCharacter;
 

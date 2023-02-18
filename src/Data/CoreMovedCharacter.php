@@ -27,7 +27,6 @@ class CoreMovedCharacter
         public \DateTime $date,
         public string $reason,
         public ?CoreAccount $deletedBy,
-    )
-    {
+    ) {
     }
 }
