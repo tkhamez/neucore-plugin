@@ -22,7 +22,7 @@ docker run -it --mount type=bind,source="$(pwd)",target=/app --workdir /app neuc
 
 Breaking changes:
 
-- All properties of `Data\CoreCharacter` can now be null except for the new `$playerId` and `$playerName` properties.
+- All properties of `Data\CoreAccount` can now be null except for the new `$playerId` and `$playerName` properties.
 - Removed `Data\CoreRole::$identifier`.
 
 Other changes:
