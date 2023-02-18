@@ -7,23 +7,23 @@ namespace Neucore\Plugin\Data;
 class CoreEsiToken
 {
     public function __construct(
-        public CoreCharacter $character,
+        public ?CoreCharacter $character = null,
 
-        public string $eveLoginName,
+        public ?string $eveLoginName = null,
 
         /**
          * Required scopes of the login.
          *
-         * @var string[]
+         * @var string[]|null
          */
-        public array $esiScopes,
+        public ?array $esiScopes = null,
 
         /**
          * Required in-game roles of the login.
          *
-         * @var string[]
+         * @var string[]|null
          */
-        public array $eveRoles,
+        public ?array $eveRoles = null,
 
         /**
          * If the ESI token is valid or not.
