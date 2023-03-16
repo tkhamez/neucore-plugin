@@ -40,7 +40,7 @@ class TestGeneral implements GeneralInterface
 
     public function getNavigationItems(): array
     {
-        return [new NavigationItem(NavigationItem::PARENT_ROOT, 'Name', '/test', '_self', [CoreRole::USER])];
+        return [new NavigationItem(NavigationItem::PARENT_ROOT, 'Name', '/test')];
     }
 
     public function command(array $arguments, array $options, OutputInterface $output): void

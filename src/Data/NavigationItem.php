@@ -44,6 +44,22 @@ class NavigationItem implements \JsonSerializable
          * @see CoreRole
          */
         private array $roles = [CoreRole::USER],
+
+        /**
+         * Group in which the user must be a member (any one of them).
+         *
+         * This respects the "Groups Deactivation" feature, including delay.
+         *
+         * @var int[]
+         */
+        private array $groups = [],
+
+        /**
+         * Group of which the user must be a manager (any one of them).
+         *
+         * @var int[]
+         */
+        private array $managerGroups = [],
     ) {
     }
 
@@ -55,6 +71,8 @@ class NavigationItem implements \JsonSerializable
             'url' => $this->url,
             'target' => $this->target,
             'roles' => $this->roles,
+            'groups' => $this->groups,
+            'managerGroups' => $this->managerGroups,
         ];
     }
 
@@ -84,5 +102,21 @@ class NavigationItem implements \JsonSerializable
     public function getRoles(): array
     {
         return $this->roles;
+    }
+
+    /**
+     * @return int[]
+     */
+    public function getGroups(): array
+    {
+        return $this->groups;
+    }
+
+    /**
+     * @return int[]
+     */
+    public function getManagerGroups(): array
+    {
+        return $this->managerGroups;
     }
 }

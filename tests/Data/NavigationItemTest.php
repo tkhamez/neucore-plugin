@@ -28,9 +28,18 @@ class NavigationItemTest extends TestCase
                 'url' => '/test',
                 'target' => '_blank',
                 'roles' => [CoreRole::PLUGIN_ADMIN],
+                'groups' => [1, 2],
+                'managerGroups' => [3],
             ],
-            (new NavigationItem(NavigationItem::PARENT_ROOT, 'Name', '/test', '_blank', [CoreRole::PLUGIN_ADMIN]))
-                ->jsonSerialize()
+            (new NavigationItem(
+                NavigationItem::PARENT_ROOT,
+                'Name',
+                '/test',
+                '_blank',
+                [CoreRole::PLUGIN_ADMIN],
+                [1, 2],
+                [3]
+            ))->jsonSerialize()
         );
     }
 
@@ -79,8 +88,31 @@ class NavigationItemTest extends TestCase
         );
         $this->assertSame(
             [CoreRole::ANONYMOUS],
-            (new NavigationItem(NavigationItem::PARENT_ROOT, 'Name', '/test', '_self', [CoreRole::ANONYMOUS]))
-                ->getRoles()
+            (new NavigationItem(NavigationItem::PARENT_ROOT, 'Name', '/t', roles: [CoreRole::ANONYMOUS]))->getRoles()
+        );
+    }
+
+    public function testGetGroups()
+    {
+        $this->assertSame(
+            [],
+            (new NavigationItem(NavigationItem::PARENT_ROOT, 'Name', '/test'))->getGroups()
+        );
+        $this->assertSame(
+            [1, 2],
+            (new NavigationItem(NavigationItem::PARENT_ROOT, 'Name', '/test', groups: [1, 2]))->getGroups()
+        );
+    }
+
+    public function testGetManagerGroups()
+    {
+        $this->assertSame(
+            [],
+            (new NavigationItem(NavigationItem::PARENT_ROOT, 'Name', '/test'))->getManagerGroups()
+        );
+        $this->assertSame(
+            [3],
+            (new NavigationItem(NavigationItem::PARENT_ROOT, 'Name', '/test', managerGroups: [3]))->getManagerGroups()
         );
     }
 }
