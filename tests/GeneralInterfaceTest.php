@@ -15,14 +15,14 @@ class GeneralInterfaceTest extends TestCase
 {
     public function testConstruct()
     {
-        $obj = new TestGeneral(new TestLogger(), new PluginConfiguration(0, true, [], ''), new TestFactory());
+        $obj = new TestGeneral(new TestLogger(), new PluginConfiguration(0, '', true, [], ''), new TestFactory());
         $this->assertInstanceOf(PluginInterface::class, $obj);
         $this->assertInstanceOf(GeneralInterface::class, $obj);
     }
 
     public function testGetNavigationItems()
     {
-        $obj = new TestGeneral(new TestLogger(), new PluginConfiguration(0, true, [], ''), new TestFactory());
+        $obj = new TestGeneral(new TestLogger(), new PluginConfiguration(0, '', true, [], ''), new TestFactory());
         $actual = $obj->getNavigationItems();
         $this->assertSame(1, count($actual));
         $this->assertInstanceOf(NavigationItem::class, $actual[0]);
@@ -33,7 +33,7 @@ class GeneralInterfaceTest extends TestCase
      */
     public function testCommand()
     {
-        $obj = new TestGeneral(new TestLogger(), new PluginConfiguration(0, true, [], ''), new TestFactory());
+        $obj = new TestGeneral(new TestLogger(), new PluginConfiguration(0, '', true, [], ''), new TestFactory());
         $out = new TestOutput();
         $obj->command(['arg'], ['opt' => 'val'], $out);
         $this->assertSame('executed', $out->output);

@@ -21,6 +21,7 @@ docker run -it --mount type=bind,source="$(pwd)",target=/app --workdir /app neuc
 ### 2.1.0
 
 - Added optional `groups` and `managerGroups` parameter to `NavigationItem` constructor.
+- Added `PluginConfiguration::$name`.
 
 ### 2.0.0 - 2023-02-18
 

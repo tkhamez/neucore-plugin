@@ -20,7 +20,7 @@ class GeneralAndServiceInterfaceTest extends TestCase
     {
         $obj = new TestGeneralAndService(
             new TestLogger(),
-            new PluginConfiguration(0, true, [], ''),
+            new PluginConfiguration(0, '', true, [], ''),
             new TestFactory(),
         );
         $this->assertInstanceOf(PluginInterface::class, $obj);
@@ -35,7 +35,7 @@ class GeneralAndServiceInterfaceTest extends TestCase
     {
         $service = new TestGeneralAndService(
             new TestLogger(),
-            new PluginConfiguration(0, true, [], ''),
+            new PluginConfiguration(0, '', true, [], ''),
             new TestFactory(),
         );
         /** @noinspection PhpVoidFunctionResultUsedInspection */
@@ -49,7 +49,7 @@ class GeneralAndServiceInterfaceTest extends TestCase
     {
         $service = new TestGeneralAndService(
             new TestLogger(),
-            new PluginConfiguration(0, true, [], ''),
+            new PluginConfiguration(0, '', true, [], ''),
             new TestFactory(),
         );
         $this->assertInstanceOf(
