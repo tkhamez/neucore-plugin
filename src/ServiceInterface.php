@@ -57,7 +57,8 @@ interface ServiceInterface extends PluginInterface
      * already exist or if it's ServiceAccountData::$status is "Deactivated" or "Unknown".
      *
      * @param CoreCharacter $character This is the main character from the player account.
-     * @param CoreGroup[] $groups
+     * @param CoreGroup[] $groups The current groups of the player. This respects the "Groups Deactivation" feature,
+     *                            including delay.
      * @param string $emailAddress
      * @param int[] $allCharacterIds All EVE character IDs from the same player account.
      * @return ServiceAccountData
@@ -84,7 +85,8 @@ interface ServiceInterface extends PluginInterface
      * This is not called if there is no account for the character.
      *
      * @param CoreCharacter $character
-     * @param CoreGroup[] $groups
+     * @param CoreGroup[] $groups The current groups of the player. This respects the "Groups Deactivation" feature,
+     *                            including delay.
      * @param CoreCharacter|null $mainCharacter
      * @throws Exception On error. If the exception contains a message it will be shown to the user.
      */
@@ -102,7 +104,8 @@ interface ServiceInterface extends PluginInterface
      *
      * This is not called if there is no account for the player.
      *
-     * @param CoreGroup[] $groups
+     * @param CoreGroup[] $groups The current groups of the player. This respects the "Groups Deactivation" feature,
+     *                            including delay.
      * @throws Exception On error
      */
     public function updatePlayerAccount(CoreCharacter $mainCharacter, array $groups): void;

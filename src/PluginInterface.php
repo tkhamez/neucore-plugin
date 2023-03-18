@@ -30,7 +30,8 @@ interface PluginInterface
      * Called by the URL /plugin/{id}/{name}.
      *
      * {id} is the plugin ID from Neucore.
-     * Only called if the logged-in user is a member of the required groups, if applicable.
+     * Only called if the logged-in user is a member of the required groups, if applicable, whereby the
+     * "Groups Deactivation" feature is respected, including delay.
      *
      * @param string $name The "{name}" part of the URL.
      * @param CoreAccount|null $coreAccount Will only be null if the user is not logged in.
