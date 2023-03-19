@@ -7,7 +7,7 @@ Classes necessary to write a [Neucore](https://github.com/tkhamez/neucore) plugi
 Documentation can be found in the Neucore repository at 
 https://github.com/tkhamez/neucore/blob/main/doc/Plugins.md.
 
-For a list of plugins see https://github.com/tkhamez/neucore#plugins-and-other-related-software.
+For a list of plugins see https://github.com/tkhamez/neucore#plugins-and-related-software.
 
 ## Dev Env
 
