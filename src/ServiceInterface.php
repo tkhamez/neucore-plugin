@@ -95,7 +95,7 @@ interface ServiceInterface extends PluginInterface
     /**
      * Updates account information.
      *
-     * This is called by the "update-service-accounts" command for all accounts return by
+     * This is called by the "update-service-accounts" command for all accounts returned by
      * ServiceInterface->getAllPlayerAccounts().
      *
      * This function is called even if there is no main character on the player account. In this case the
