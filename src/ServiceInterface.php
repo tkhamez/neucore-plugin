@@ -47,14 +47,14 @@ interface ServiceInterface extends PluginInterface
     public function getAccounts(array $characters): array;
 
     /**
-     * Creates new account and returns account data.
+     * Creates new account for the main character of a player account and returns account data.
      *
      * This is not called if there is already a service account for this character or if the
      * "Limit to one service account" option is used and there is already a service account associated
      * with any character on the same player account.
      *
-     * A player can only register a new account for their main character and only if that account does not
-     * already exist or if it's ServiceAccountData::$status is "Deactivated" or "Unknown".
+     * This may also be called for existing accounts if their ServiceAccountData::$status is "Deactivated"
+     * or "Unknown". This is necessary if the service does not have the ability to update an account, for example.
      *
      * @param CoreCharacter $character This is the main character from the player account.
      * @param CoreGroup[] $groups The current groups of the player. This respects the "Groups Deactivation" feature,
