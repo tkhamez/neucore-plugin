@@ -18,6 +18,10 @@ docker run -it --mount type=bind,source="$(pwd)",target=/app --workdir /app neuc
 
 ## Changelog
 
+### 4.0.0 - 2024-06-01
+
+- Dropped PHP 8.0 support, minimum required version is now 8.1.0 (same as Neucore >=2.5.0).
+
 ### 3.0.0 - 2023-07-29
 
 This version needs Neucore version 2.2.0 or higher.
