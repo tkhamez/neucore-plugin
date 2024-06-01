@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Tests;
 
+use Psr\Http\Message\MessageInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\StreamInterface;
 use Psr\Http\Message\UriInterface;
@@ -11,99 +12,99 @@ use Psr\Http\Message\UriInterface;
 class TestRequest implements ServerRequestInterface
 {
 
-    public function getProtocolVersion()
+    public function getProtocolVersion(): string
     {
     }
 
-    public function withProtocolVersion($version)
+    public function withProtocolVersion($version): MessageInterface
     {
     }
 
-    public function getHeaders()
+    public function getHeaders(): array
     {
     }
 
-    public function hasHeader($name)
+    public function hasHeader($name): bool
     {
     }
 
-    public function getHeader($name)
+    public function getHeader($name): array
     {
     }
 
-    public function getHeaderLine($name)
+    public function getHeaderLine($name): string
     {
     }
 
-    public function withHeader($name, $value)
+    public function withHeader($name, $value): MessageInterface
     {
     }
 
-    public function withAddedHeader($name, $value)
+    public function withAddedHeader($name, $value): MessageInterface
     {
     }
 
-    public function withoutHeader($name)
+    public function withoutHeader($name): MessageInterface
     {
     }
 
-    public function getBody()
+    public function getBody(): StreamInterface
     {
     }
 
-    public function withBody(StreamInterface $body)
+    public function withBody(StreamInterface $body): MessageInterface
     {
     }
 
-    public function getRequestTarget()
+    public function getRequestTarget(): string
     {
     }
 
-    public function withRequestTarget($requestTarget)
+    public function withRequestTarget($requestTarget): \Psr\Http\Message\RequestInterface
     {
     }
 
-    public function getMethod()
+    public function getMethod(): string
     {
     }
 
-    public function withMethod($method)
+    public function withMethod($method): \Psr\Http\Message\RequestInterface
     {
     }
 
-    public function getUri()
+    public function getUri(): UriInterface
     {
     }
 
-    public function withUri(UriInterface $uri, $preserveHost = false)
+    public function withUri(UriInterface $uri, $preserveHost = false): \Psr\Http\Message\RequestInterface
     {
     }
 
-    public function getServerParams()
+    public function getServerParams(): array
     {
     }
 
-    public function getCookieParams()
+    public function getCookieParams(): array
     {
     }
 
-    public function withCookieParams(array $cookies)
+    public function withCookieParams(array $cookies): ServerRequestInterface
     {
     }
 
-    public function getQueryParams()
+    public function getQueryParams(): array
     {
     }
 
-    public function withQueryParams(array $query)
+    public function withQueryParams(array $query): ServerRequestInterface
     {
     }
 
-    public function getUploadedFiles()
+    public function getUploadedFiles(): array
     {
     }
 
-    public function withUploadedFiles(array $uploadedFiles)
+    public function withUploadedFiles(array $uploadedFiles): ServerRequestInterface
     {
     }
 
@@ -111,11 +112,11 @@ class TestRequest implements ServerRequestInterface
     {
     }
 
-    public function withParsedBody($data)
+    public function withParsedBody($data): ServerRequestInterface
     {
     }
 
-    public function getAttributes()
+    public function getAttributes(): array
     {
     }
 
@@ -123,11 +124,11 @@ class TestRequest implements ServerRequestInterface
     {
     }
 
-    public function withAttribute($name, $value)
+    public function withAttribute($name, $value): ServerRequestInterface
     {
     }
 
-    public function withoutAttribute($name)
+    public function withoutAttribute($name): ServerRequestInterface
     {
     }
 }

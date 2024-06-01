@@ -4,65 +4,66 @@ declare(strict_types=1);
 
 namespace Tests;
 
+use Psr\Http\Message\MessageInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
 
 class TestResponse implements ResponseInterface
 {
 
-    public function getProtocolVersion()
+    public function getProtocolVersion(): string
     {
     }
 
-    public function withProtocolVersion($version)
+    public function withProtocolVersion($version): MessageInterface
     {
     }
 
-    public function getHeaders()
+    public function getHeaders(): array
     {
     }
 
-    public function hasHeader($name)
+    public function hasHeader($name): bool
     {
     }
 
-    public function getHeader($name)
+    public function getHeader($name): array
     {
     }
 
-    public function getHeaderLine($name)
+    public function getHeaderLine($name): string
     {
     }
 
-    public function withHeader($name, $value)
+    public function withHeader($name, $value): MessageInterface
     {
     }
 
-    public function withAddedHeader($name, $value)
+    public function withAddedHeader($name, $value): MessageInterface
     {
     }
 
-    public function withoutHeader($name)
+    public function withoutHeader($name): MessageInterface
     {
     }
 
-    public function getBody()
+    public function getBody(): StreamInterface
     {
     }
 
-    public function withBody(StreamInterface $body)
+    public function withBody(StreamInterface $body): MessageInterface
     {
     }
 
-    public function getStatusCode()
+    public function getStatusCode(): int
     {
     }
 
-    public function withStatus($code, $reasonPhrase = '')
+    public function withStatus($code, $reasonPhrase = ''): ResponseInterface
     {
     }
 
-    public function getReasonPhrase()
+    public function getReasonPhrase(): string
     {
     }
 }
