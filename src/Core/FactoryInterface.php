@@ -12,6 +12,9 @@ interface FactoryInterface
 {
     public function createHttpClient(string $userAgent = ''): ClientInterface;
 
+    /**
+     * @param array $headers e.g. ['Authorization' => 'Bearer token']
+     */
     public function createHttpRequest(
         string $method,
         string $url,
