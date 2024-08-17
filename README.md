@@ -1,4 +1,5 @@
 [![build](https://github.com/tkhamez/neucore-plugin/workflows/test/badge.svg)](https://github.com/tkhamez/neucore-plugin/actions)
+[![Packagist Downloads](https://img.shields.io/packagist/dt/tkhamez/neucore-plugin)](https://packagist.org/packages/tkhamez/neucore-plugin)
 
 # neucore-plugin
 
