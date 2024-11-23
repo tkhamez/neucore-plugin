@@ -57,11 +57,11 @@ class ServiceAccountData implements JsonSerializable
 
     public function __construct(
         int $characterId,
-        string $username = null,
-        string $password = null,
-        string $email = null,
-        string $status = null,
-        string $name = null
+        ?string $username = null,
+        ?string $password = null,
+        ?string $email = null,
+        ?string $status = null,
+        ?string $name = null
     ) {
         $this->characterId = $characterId;
         $this->username = $username;

@@ -19,7 +19,7 @@ interface FactoryInterface
         string $method,
         string $url,
         array $headers = [],
-        string $body = null
+        ?string $body = null
     ): RequestInterface;
 
     public function createSymfonyYamlParser(): Parser;

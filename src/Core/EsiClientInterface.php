@@ -75,8 +75,8 @@ interface EsiClientInterface
     public function request(
         string $esiPath,
         string $method = 'GET',
-        string $body = null,
-        int $characterId = null,
+        ?string $body = null,
+        ?int $characterId = null,
         string $eveLoginName = self::DEFAULT_LOGIN_NAME,
         bool $debug = false,
     ): ResponseInterface;
