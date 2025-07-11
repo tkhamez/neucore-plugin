@@ -8,6 +8,13 @@ namespace Neucore\Plugin\Core;
 
 use Psr\Http\Message\ResponseInterface;
 
+/**
+ * ESI requests.
+ *
+ * This uses the ESI compatibility date from Neucore (backend/config/settings.php) unless
+ * another date is set with setCompatibilityDate() or a date is provided for the request()
+ * method.
+ */
 interface EsiClientInterface
 {
     public const DEFAULT_LOGIN_NAME = 'core.default';
@@ -43,12 +50,17 @@ interface EsiClientInterface
     public const ERROR_UNKNOWN = 'Unknown error.';
 
     /**
-     * Returns number of errors that should remain while checking the ESI error limit.
+     * Returns the number of errors that should remain while checking the ESI error limit.
      *
      * For example, if this value is 10, the client only allows a value of 10 for the HTTP response header
      * X-Esi-Error-Limit-Remain before failing.
      */
     public function getErrorLimitRemaining(): int;
+
+    /**
+     * @param string $compatibilityDate The ESI compatibility date (YYYY-MM-DD).
+     */
+    public function setCompatibilityDate(string $compatibilityDate): void;
 
     /**
      * Makes a request to the EVE API.
@@ -62,10 +74,11 @@ interface EsiClientInterface
      *                        e.g. /latest/characters/96061222/assets/?page=1
      * @param string $method HTTP request method.
      * @param string|null $body Optional body for the request, usually JSON encoded.
-     * @param int|null $characterId EVE character ID, required for requests that need authorization.
+     * @param int|null $characterId EVE character ID, required for requests that need authorisation.
      * @param string $eveLoginName Neucore EVE login name, it determines the ESI token that should be used.
      *                             Valid names can be found in Neucore at Administration -> EVE Logins.
      * @param bool $debug Set to true to disable the response cache.
+     * @param ?string $compatibilityDate The ESI compatibility date (YYYY-MM-DD).
      * @throws Exception Thrown if a request limit was reached, in this case the exception code will be
      *                   the Unix timestamp to wait until.
      *                   Thrown if the character does not exist or does not have a valid ESI token.
@@ -79,5 +92,6 @@ interface EsiClientInterface
         ?int $characterId = null,
         string $eveLoginName = self::DEFAULT_LOGIN_NAME,
         bool $debug = false,
+        ?string $compatibilityDate = null,
     ): ResponseInterface;
 }

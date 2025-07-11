@@ -19,6 +19,10 @@ docker run -it --mount type=bind,source="$(pwd)",target=/app --workdir /app neuc
 
 ## Changelog
 
+### 5.0.0 - 2025-07-12
+
+- Added ESI compatibility date to EsiClientInterface. (Needs Neucore >= 2.8.0)
+
 ### 4.1.0 - 2024-11-23
 
 - PHP 8.4 compatibility.
