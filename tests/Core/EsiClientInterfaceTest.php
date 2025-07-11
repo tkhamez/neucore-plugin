@@ -37,6 +37,16 @@ class EsiClientInterfaceTest extends TestCase
         $this->assertSame(0, count($params));
     }
 
+    public function testSetCompatibilityDate()
+    {
+        $method = new \ReflectionMethod(EsiClientInterface::class, 'setCompatibilityDate');
+        $this->assertSame('void', $method->getReturnType()->getName());
+
+        $params = $method->getParameters();
+        $this->assertSame(1, count($params));
+        $this->assertSame('string', $params[0]->getType()->getName());
+    }
+
     public function testRequest()
     {
         $method = new \ReflectionMethod(EsiClientInterface::class, 'request');
@@ -44,12 +54,13 @@ class EsiClientInterfaceTest extends TestCase
         $this->assertFalse($method->getReturnType()->allowsNull());
 
         $params = $method->getParameters();
-        $this->assertSame(6, count($params));
+        $this->assertSame(7, count($params));
         $this->assertSame('string', $params[0]->getType()->getName());
         $this->assertSame('string', $params[1]->getType()->getName());
         $this->assertSame('string', $params[2]->getType()->getName());
         $this->assertSame('int', $params[3]->getType()->getName());
         $this->assertSame('string', $params[4]->getType()->getName());
         $this->assertSame('bool', $params[5]->getType()->getName());
+        $this->assertSame('string', $params[6]->getType()->getName());
     }
 }
