@@ -21,7 +21,7 @@ docker run -it --mount type=bind,source="$(pwd)",target=/app --workdir /app neuc
 
 ### 4.2.0 - 2025-07-12
 
-- Add ESI compatibility date to EsiClientInterface.
+- Add ESI compatibility date to EsiClientInterface. (Needs Neucore >= 2.8.0)
 
 ### 4.1.0 - 2024-11-23
 
