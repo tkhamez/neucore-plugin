@@ -1,5 +1,8 @@
+[![Latest Stable Version](http://poser.pugx.org/tkhamez/neucore-plugin/v)](https://packagist.org/packages/tkhamez/neucore-plugin) 
+[![Total Downloads](http://poser.pugx.org/tkhamez/neucore-plugin/downloads)](https://packagist.org/packages/tkhamez/neucore-plugin) 
+[![License](http://poser.pugx.org/tkhamez/neucore-plugin/license)](https://packagist.org/packages/tkhamez/neucore-plugin) 
+[![PHP Version Require](http://poser.pugx.org/tkhamez/neucore-plugin/require/php)](https://packagist.org/packages/tkhamez/neucore-plugin)
 [![build](https://github.com/tkhamez/neucore-plugin/workflows/test/badge.svg)](https://github.com/tkhamez/neucore-plugin/actions)
-[![Packagist Downloads](https://img.shields.io/packagist/dt/tkhamez/neucore-plugin)](https://packagist.org/packages/tkhamez/neucore-plugin)
 
 # neucore-plugin
 
