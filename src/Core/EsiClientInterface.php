@@ -93,5 +93,6 @@ interface EsiClientInterface
         string $eveLoginName = self::DEFAULT_LOGIN_NAME,
         bool $debug = false,
         ?string $compatibilityDate = null,
+        ?string $acceptLanguage = null,
     ): ResponseInterface;
 }

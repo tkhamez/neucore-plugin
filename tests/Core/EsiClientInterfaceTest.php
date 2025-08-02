@@ -54,7 +54,7 @@ class EsiClientInterfaceTest extends TestCase
         $this->assertFalse($method->getReturnType()->allowsNull());
 
         $params = $method->getParameters();
-        $this->assertSame(7, count($params));
+        $this->assertSame(8, count($params));
         $this->assertSame('string', $params[0]->getType()->getName());
         $this->assertSame('string', $params[1]->getType()->getName());
         $this->assertSame('string', $params[2]->getType()->getName());
@@ -62,5 +62,6 @@ class EsiClientInterfaceTest extends TestCase
         $this->assertSame('string', $params[4]->getType()->getName());
         $this->assertSame('bool', $params[5]->getType()->getName());
         $this->assertSame('string', $params[6]->getType()->getName());
+        $this->assertSame('string', $params[7]->getType()->getName());
     }
 }
