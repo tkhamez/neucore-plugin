@@ -24,7 +24,7 @@ docker run -it --mount type=bind,source="$(pwd)",target=/app --workdir /app neuc
 
 ### 6.0.0 - 2025-08-02
 
-- Added "accept language" EsiClientInterface. (Needs Neucore >= 2.9.0)
+- Added "accept language" to EsiClientInterface. (Needs Neucore >= 2.9.0)
 
 ### 5.0.0 - 2025-07-12
 
