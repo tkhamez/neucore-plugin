@@ -17,7 +17,7 @@
     "autoload": {
         "psr-4": {
             "Neucore\\Plugin\\": "src/",
-            "Tests\\": "tests/"
+            "Neucore\\Plugin\\Tests\\": "tests/"
         }
     },
     "scripts": {

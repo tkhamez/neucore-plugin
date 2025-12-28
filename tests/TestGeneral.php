@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests;
+namespace Neucore\Plugin\Tests;
 
 use Neucore\Plugin\Core\OutputInterface;
 use Neucore\Plugin\Data\CoreAccount;

@@ -3,4 +3,4 @@ RUN apk update && apk add --no-cache linux-headers
 RUN mkdir -p /usr/src/php/ext/xdebug && \
     curl -fsSL https://xdebug.org/files/xdebug-3.5.0.tgz | tar xvz -C "/usr/src/php/ext/xdebug" --strip 1
 RUN docker-php-ext-install xdebug
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+COPY --from=composer:2.9 /usr/bin/composer /usr/bin/composer

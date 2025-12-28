@@ -1,5 +1,9 @@
 # Changelog
 
+## next
+
+- Compatibility with PHP 8.5.
+
 ## 6.0.0 - 2025-08-02
 
 - Added "accept language" to EsiClientInterface. (Needs Neucore >= 2.9.0)

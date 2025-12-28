@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests;
+namespace Neucore\Plugin\Tests;
 
 use Neucore\Plugin\Data\CoreCharacter;
 use Neucore\Plugin\Data\PluginConfiguration;
