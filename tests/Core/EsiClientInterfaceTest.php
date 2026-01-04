@@ -15,6 +15,7 @@ class EsiClientInterfaceTest extends TestCase
         $this->assertSame('core.default', EsiClientInterface::DEFAULT_LOGIN_NAME);
         $this->assertSame('Error limit reached.', EsiClientInterface::ERROR_ERROR_LIMIT_REACHED);
         $this->assertSame('Rate limit reached.', EsiClientInterface::ERROR_RATE_LIMIT_REACHED);
+        $this->assertSame('Permissible rate limit reached.', EsiClientInterface::ERROR_PERMISSIBLE_RATE_LIMIT_REACHED);
         $this->assertSame('Temporarily throttled.', EsiClientInterface::ERROR_TEMPORARILY_THROTTLED);
         $this->assertSame('Character not found.', EsiClientInterface::ERROR_CHARACTER_NOT_FOUND);
         $this->assertSame('Character has no valid token.', EsiClientInterface::ERROR_INVALID_TOKEN);
