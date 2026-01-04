@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Data;
+namespace Neucore\Plugin\Tests\Data;
 
 use Neucore\Plugin\Data\CoreRole;
 use Neucore\Plugin\Data\NavigationItem;

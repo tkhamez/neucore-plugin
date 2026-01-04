@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Core;
+namespace Neucore\Plugin\Tests\Core;
 
 use Neucore\Plugin\Core\EsiClientInterface;
 use PHPUnit\Framework\TestCase;

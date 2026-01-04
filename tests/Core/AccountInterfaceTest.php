@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Core;
+namespace Neucore\Plugin\Tests\Core;
 
 use Neucore\Plugin\Core\AccountInterface;
 use Neucore\Plugin\Data\CoreAccount;

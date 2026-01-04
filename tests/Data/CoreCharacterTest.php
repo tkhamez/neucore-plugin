@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Data;
+namespace Neucore\Plugin\Tests\Data;
 
 use Neucore\Plugin\Data\CoreCharacter;
 use PHPUnit\Framework\TestCase;
