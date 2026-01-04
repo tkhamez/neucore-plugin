@@ -1,8 +1,9 @@
 # Changelog
 
-## next
+## 6.1.0 - 2026-01-04
 
 - Compatibility with PHP 8.5.
+- Added an error message for the new ESI rate limits. (Needs Neucore >= 2.10.0)
 
 ## 6.0.0 - 2025-08-02
 
@@ -24,7 +25,7 @@
 
 This version needs Neucore version 2.2.0 or higher.
 
-- Raised minimum required PHP version to 8.0.2, from 8.0.0.
+- Raised the minimum required PHP version to 8.0.2, from 8.0.0.
 - Update symfony/yaml to version 6, from 5.
 
 ## 2.1.0 - 2023-03-18
