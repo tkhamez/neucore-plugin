@@ -20,14 +20,32 @@ interface EsiClientInterface
     public const DEFAULT_LOGIN_NAME = 'core.default';
 
     /**
-     * Exception message when the ESI error limit has been reached.
+     * Exception message when the permissible ESI error limit has been reached.
+     *
+     * Please note that this limit for plugins is reduced compared to the actual ESI limit.
+     *
+     * @see https://developers.eveonline.com/docs/services/esi/best-practices/#error-limit
      */
     public const ERROR_ERROR_LIMIT_REACHED = 'Error limit reached.';
 
     /**
      * Exception message when the ESI rate limit has been reached.
+     *
+     * This error is used when ESI returned a 429 status code.
      */
     public const ERROR_RATE_LIMIT_REACHED = 'Rate limit reached.';
+
+    /**
+     * Exception message when the permissible ESI rate limit has been reached.
+     *
+     * Please note that this limit for plugins is reduced compared to the actual ESI limit.
+     *
+     * It is necessary to wait at least until the specified time.
+     * However, it is possible that the waiting time must be longer.
+     *
+     * @see https://developers.eveonline.com/docs/services/esi/rate-limiting/.
+     */
+    public const ERROR_PERMISSIBLE_RATE_LIMIT_REACHED = 'Permissible rate limit reached.';
 
     /**
      * Exception message when temporarily throttled by ESI.
