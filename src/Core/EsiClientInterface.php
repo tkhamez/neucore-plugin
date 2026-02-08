@@ -88,6 +88,8 @@ interface EsiClientInterface
      * This checks various ESI limits (error, rate, throttled) and throws exceptions if the client needs to wait
      * before it can make further requests. The exception code is the Unix timestamp to wait until.
      *
+     * Since Neucore version 2.13.0, the client implements a retry logic for connection and 5xx errors.
+     *
      * @param string $esiPath The full path with query parameters but without the "datasource" parameter,
      *                        e.g. /latest/characters/96061222/assets/?page=1
      * @param string $method HTTP request method.
