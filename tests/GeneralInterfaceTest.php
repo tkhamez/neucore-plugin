@@ -13,6 +13,7 @@ use PHPUnit\Framework\TestCase;
 
 class GeneralInterfaceTest extends TestCase
 {
+    /** @noinspection PhpConditionAlreadyCheckedInspection */
     public function testConstruct()
     {
         $obj = new TestGeneral(new TestLogger(), new PluginConfiguration(0, '', true, [], ''), new TestFactory());

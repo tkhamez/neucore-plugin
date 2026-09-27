@@ -6,7 +6,6 @@ namespace Neucore\Plugin\Tests;
 
 use Neucore\Plugin\Core\OutputInterface;
 use Neucore\Plugin\Data\CoreAccount;
-use Neucore\Plugin\Data\CoreRole;
 use Neucore\Plugin\Exception;
 use Neucore\Plugin\Core\FactoryInterface;
 use Neucore\Plugin\GeneralInterface;

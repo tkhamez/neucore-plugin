@@ -14,6 +14,7 @@ use PHPUnit\Framework\TestCase;
 
 class ServiceInterfaceTest extends TestCase
 {
+    /** @noinspection PhpConditionAlreadyCheckedInspection */
     public function testConstruct()
     {
         $obj = new TestService(new TestLogger(), new PluginConfiguration(0, '', true, [], ''), new TestFactory());

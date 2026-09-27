@@ -1,10 +1,13 @@
 <?php
 
+/** @noinspection PhpInconsistentReturnPointsInspection */
+
 declare(strict_types=1);
 
 namespace Neucore\Plugin\Tests;
 
 use Psr\Http\Message\MessageInterface;
+use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\StreamInterface;
 use Psr\Http\Message\UriInterface;
@@ -60,7 +63,7 @@ class TestRequest implements ServerRequestInterface
     {
     }
 
-    public function withRequestTarget($requestTarget): \Psr\Http\Message\RequestInterface
+    public function withRequestTarget($requestTarget): RequestInterface
     {
     }
 
@@ -68,7 +71,7 @@ class TestRequest implements ServerRequestInterface
     {
     }
 
-    public function withMethod($method): \Psr\Http\Message\RequestInterface
+    public function withMethod($method): RequestInterface
     {
     }
 
@@ -76,7 +79,7 @@ class TestRequest implements ServerRequestInterface
     {
     }
 
-    public function withUri(UriInterface $uri, $preserveHost = false): \Psr\Http\Message\RequestInterface
+    public function withUri(UriInterface $uri, $preserveHost = false): RequestInterface
     {
     }
 

@@ -16,6 +16,7 @@ use Psr\Http\Message\ResponseInterface;
 
 class GeneralAndServiceInterfaceTest extends TestCase
 {
+    /** @noinspection PhpConditionAlreadyCheckedInspection */
     public function testConstruct()
     {
         $obj = new TestGeneralAndService(
