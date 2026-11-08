@@ -1,6 +1,6 @@
 # Changelog
 
-## next
+## 6.2.0 - 2026-11-08
 
 - Added `redirectRequestNames` to [plugin.yml](plugin.yml), see
   [Neucore plugin documentation](https://github.com/tkhamez/neucore/blob/main/doc/Plugins.md) 
