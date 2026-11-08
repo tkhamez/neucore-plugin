@@ -1,5 +1,11 @@
 # Changelog
 
+## next
+
+- Added `redirectRequestNames` to [plugin.yml](plugin.yml), see
+  [Neucore plugin documentation](https://github.com/tkhamez/neucore/blob/main/doc/Plugins.md) 
+  for more information (needs Neucore >= 3.3.0)
+
 ## 6.1.0 - 2026-01-04
 
 - Compatibility with PHP 8.5.
