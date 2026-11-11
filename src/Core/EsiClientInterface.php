@@ -63,6 +63,11 @@ interface EsiClientInterface
     public const ERROR_INVALID_TOKEN = 'Character has no valid token.';
 
     /**
+     * Exception message when the requested ESI path was invalid.
+     */
+    public const ERROR_INVALID_ESI_PATH = 'Invalid ESI path.';
+
+    /**
      * Exception message for any other error.
      */
     public const ERROR_UNKNOWN = 'Unknown error.';

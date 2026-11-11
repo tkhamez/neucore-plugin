@@ -19,6 +19,7 @@ class EsiClientInterfaceTest extends TestCase
         $this->assertSame('Temporarily throttled.', EsiClientInterface::ERROR_TEMPORARILY_THROTTLED);
         $this->assertSame('Character not found.', EsiClientInterface::ERROR_CHARACTER_NOT_FOUND);
         $this->assertSame('Character has no valid token.', EsiClientInterface::ERROR_INVALID_TOKEN);
+        $this->assertSame('Invalid ESI path.', EsiClientInterface::ERROR_INVALID_ESI_PATH);
         $this->assertSame('Unknown error.', EsiClientInterface::ERROR_UNKNOWN);
     }
 

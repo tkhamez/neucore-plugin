@@ -1,5 +1,10 @@
 # Changelog
 
+## next
+
+- Added constant `EsiClientInterface::ERROR_INVALID_ESI_PATH`, a new error message for the
+  exception in `EsiClientInterface::request()`.
+
 ## 6.2.0 - 2026-11-08
 
 - Added `redirectRequestNames` to [plugin.yml](plugin.yml), see
