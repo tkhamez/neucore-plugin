@@ -1,6 +1,6 @@
 # Changelog
 
-## next
+## 6.3.0 - 2026-11-21
 
 - Added constant `EsiClientInterface::ERROR_INVALID_ESI_PATH`, a new error message for the
   exception in `EsiClientInterface::request()`.
