@@ -12,6 +12,7 @@
         "symfony/yaml": "^6.0"
     },
     "require-dev": {
+        "phpcompatibility/php-compatibility": "^10.0.0-alpha3",
         "phpunit/phpunit": "^10.5"
     },
     "autoload": {
@@ -22,12 +23,16 @@
     },
     "scripts": {
         "test": "phpunit",
-        "test:coverage": "XDEBUG_MODE=coverage phpunit --coverage-html coverage"
+        "test:coverage": "XDEBUG_MODE=coverage phpunit --coverage-html coverage",
+        "compat": "phpcs --standard=PHPCompatibility --runtime-set testVersion 8.1-8.5 --colors -p src tests"
     },
     "config": {
         "platform": {
             "php": "8.1.0"
         },
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     }
 }
